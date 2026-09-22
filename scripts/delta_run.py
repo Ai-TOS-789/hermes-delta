@@ -29,6 +29,7 @@ def main():
     ah, ah_rc = run("auto_healer.py")  # module 16: guarded auto-remediation
     hf, hf_rc = run("healer_feedback.py")  # module 17: heal->learn feedback loop
     br, br_rc = run("belief_revision.py")  # module 18: retract beliefs learned wrong
+    pa, pa_rc = run("prediction_audit.py")  # module 20: score past forecasts vs truth
     family_data, family_rc = run("family_lineage.py")  # module 19: autonomous family lineage
     # re-run AFTER belief revision so the recall index is rebuilt without
     # retracted entries (quarantine), and the KG reflects revised beliefs
@@ -79,6 +80,9 @@ def main():
         "belief_revision": {"retracted": br.get("retracted", []) if isinstance(br, dict) else [],
                             "held": len(br.get("held", [])) if isinstance(br, dict) else 0,
                             "citation_rotted": br.get("citation_rotted", []) if isinstance(br, dict) else []},
+        "prediction_audit": {"scored_this_run": pa.get("scored_this_run") if isinstance(pa, dict) else None,
+                             "calibration": pa.get("calibration", []) if isinstance(pa, dict) else [],
+                             "over_firing": pa.get("over_firing", []) if isinstance(pa, dict) else []},
         "family": family_data if isinstance(family_data, dict) else {},
     }
     if anomaly:
@@ -101,6 +105,9 @@ def main():
     if br_rc == 2:
         report["escalation"] = (report.get("escalation", "") +
                                 " belief_revision: beliefs retracted — past learning was wrong, see belief_revision_state.json").strip()
+    if pa_rc == 2:
+        report["escalation"] = (report.get("escalation", "") +
+                                " prediction_audit: OVER_FIRING forecaster detected — calibration broken, weight change needs human approval").strip()
     if sd_rc == 3:
         report["escalation"] = (report.get("escalation", "") +
                                 " skill_doctor: unrepairable defects found — see skill_doctor_state.json").strip()
@@ -112,6 +119,26 @@ def main():
             f.write(json.dumps(report) + "\n")
     except Exception:
         pass
+    # module 21 runs AFTER the history append so it diffs THIS run vs the
+    # previous one (running it before the append made it compare the two
+    # OLDEST-pending runs — same lag-1 bug class as module 15's original
+    # alert source, caught by testing 2026-09-22)
+    dc, dc_rc = run("delta_compare.py")
+    if dc_rc == 2:
+        report["delta_compare"] = {"drifts": dc.get("drifts", []) if isinstance(dc, dict) else [],
+                                   "evidence": dc.get("evidence", []) if isinstance(dc, dict) else []}
+        report["escalation"] = (report.get("escalation", "") +
+                                " delta_compare: behavioral drift between runs — see delta_compare.evidence in this report").strip()
+        with open(REPORT, "w") as f:
+            json.dump(report, f, indent=2)
+        try:
+            with open(os.path.join(D, "delta_report_history.jsonl")) as f:
+                hist = f.readlines()
+            hist[-1] = json.dumps(report) + "\n"
+            with open(os.path.join(D, "delta_report_history.jsonl"), "w") as f:
+                f.writelines(hist)
+        except Exception:
+            pass
     print(json.dumps(report, indent=2))
     return 2 if anomaly else 0
 

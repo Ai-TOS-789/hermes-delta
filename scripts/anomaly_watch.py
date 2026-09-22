@@ -81,7 +81,11 @@ def mem_pct():
 
 def parse_unit(line):
     # short format: "Mon DD HH:MM:SS host ident[pid]: msg"
-    m = re.match(r"\w{3}\s+\d+ \d+:\d+:\d+ \S+ ([^:\[]+)(?:\[\d+\])?: (.*)", line)
+    # \w{3} matches only ASCII months; on a Thai-locale host the journal
+    # prints "ก.ย." — every line parsed as unit "?" (all 35 baseline
+    # signatures had zero attribution; same bug as module 15, fixed there
+    # 2026-09-22 but missed here). Match any non-space month token.
+    m = re.match(r"\S+\s+\d+ \d+:\d+:\d+ \S+ ([^:\[\s]+)(?:\[\d+\])?: (.*)", line)
     if m:
         return m.group(1).strip(), m.group(2)
     return "?", line

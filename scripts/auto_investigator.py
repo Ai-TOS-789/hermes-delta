@@ -126,6 +126,16 @@ SEEDS = {
          "app", r"gvfs|tracker|gnome-shell|colord|pipewire", r"", "alert_line_only"),
         ("The new pattern indicates a real service defect (non-desktop unit)",
          "app", r"", r"gvfs|tracker|gnome-shell|colord|pipewire", "non_desktop_defect"),
+        # desktop-SUBSYSTEM fault, not noise: gsd-* / pipewire / wireplumber
+        # components ARE desktop components but their errors are real user-
+        # facing faults (no audio sink). Distinct from gvfs/tracker chatter.
+        # Production 2026-09-22: gsd-media-keys "unable to get default sink"
+        # was closed INSUFFICIENT_EVIDENCE because no seed covered this class.
+        # Wording discipline: must NOT contain "gvfs/tracker" or "transient
+        # desktop-session error" — the healer KEYMAP maps those substrings to
+        # MARK_DESKTOP_NOISE and would silence a real fault as noise.
+        ("A desktop subsystem fault affecting user sessions (gsd-*/pipewire/wireplumber component error, not session chatter)",
+         "app", r"gsd-|pipewire|wireplumber|pulse|xdg-desktop", r"gvfs|tracker", "desktop_subsystem_fault"),
     ],
     "MEM_HIGH": [
         ("Memory pressure from a single dominant process (top RSS > 30% of RAM)",
@@ -193,6 +203,17 @@ def test(h, lines, cap):
         elif cre:
             disconf.append(f"[alert-line] pattern NOT in the alert line — "
                            f"window-wide match would be a false positive here")
+    elif gate == "desktop_subsystem_fault":
+        # gsd-*/pipewire/wireplumber in the ALERT LINE confirm a desktop-
+        # subsystem fault; gvfs/tracker in the ALERT LINE disconfirm (that
+        # is desktop chatter, not a subsystem fault). Both directions on
+        # the alert line itself — never the window (bug 4 lesson).
+        if dre and re.search(dre, alert_line, re.I):
+            disconf.append(f"[alert-line] gvfs/tracker chatter in the alert "
+                           f"itself, not a subsystem fault: {alert_line[:110]}")
+        elif cre and re.search(cre, alert_line, re.I):
+            conf.append(f"[alert-line] desktop-subsystem component in the alert "
+                        f"itself: {alert_line[:110]}")
     elif gate == "non_desktop_defect":
         # converse: desktop words in the ALERT LINE disconfirm "real defect";
         # a unit/service failure in the alert line with no desktop words
