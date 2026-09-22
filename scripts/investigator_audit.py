@@ -52,6 +52,13 @@ STATE = os.path.join(D, "investigator_audit_state.json")
 INV_STATE = os.path.join(D, "inv_state.json")
 EXP = os.path.expanduser("~/.hermes/skills/agent-self-learning/experience.jsonl")
 
+# bug 17 (2026-09-22): signatures/alert_details are stored NORMALIZED but the
+# audit matched them against RAW journal lines — a normalized tail can never
+# match raw text. Normalize the journal side with the SAME function (imported,
+# not copied — bug-6 lesson: shared parsers must not fork). One source of truth.
+sys.path.insert(0, D)
+from anomaly_watch import norm as _norm
+
 SCORE_DELAY_MIN = 90   # score only after 90 min — let the future happen
 MIN_SCORED_FOR_CALIBRATION = 3
 BAD_CALIBRATION_THRESHOLD = 0.5  # accuracy below this = MISDIAGNOSING
@@ -150,7 +157,10 @@ def score(inv, now):
         else:
             score_v = "TRUE_POSITIVE"
             tail = re.sub(r"[0-9a-f]{4,}", "x", detail[-40:].strip())
-            recurred = sum(1 for l in lines if tail and tail in l.lower())
+            # bug 17: match in normalized space (signature is normalized,
+            # journal is raw — normalize the journal side with the same norm(),
+            # case-folded: norm() emits 'N' but stored signatures are 'n')
+            recurred = sum(1 for l in lines if tail and tail in _norm(l).lower())
             why = (f"benign chatter (recurred {recurred}x in the "
                    f"{SCORE_DELAY_MIN}min window — recurrence expected, "
                    f"no failure signature)")
@@ -244,9 +254,56 @@ def main():
         if ts is None or ts + SCORE_DELAY_MIN * 60 > now:
             continue
         detail = (inv.get("alert_detail") or "").lower()
+        # bug 17 (2026-09-22, production sda): the alert_detail/signature is
+        # stored NORMALIZED (numbers -> 'n', hex -> 'h') but journal lines are
+        # RAW — a tail like "sector n op 0x1:(write) flags 0x800800 phys_seg n
+        # prio clas" can NEVER match "sector 31552 ... phys_seg 1 prio class".
+        # Result: two kernel disk-I/O investigations (18:09:20) scored
+        # "recurred 0x — nothing was wrong" while the disk threw 68 more lines
+        # in that same window and finally died offline. For a hardware alert
+        # ("dev <name>" + I/O-error words) silence means the DEVICE DIED or
+        # was removed — never "healthy". Score those as TRUE_NEGATIVE only if
+        # the device still exists AND threw no I/O errors; if it is gone, the
+        # pattern cannot recur by definition — treat as TRUE_NEGATIVE with an
+        # explicit device-gone note (the module-24 DISK_IO alert carries the
+        # real verdict; these legacy NEW_PATTERN entries were pre-module-24).
+        hw = re.search(r"dev ([a-z0-9]+)", detail)
+        hw_words = re.search(r"offline|i/o error|buffer i/o", detail)
         tail = re.sub(r"[0-9a-f]{4,}", "x", detail[-40:].strip())
         lines = journal_window(iso(ts), iso(ts + SCORE_DELAY_MIN * 60))
-        recurred = sum(1 for l in lines if tail and tail in l.lower())
+        # bug 17: match in NORMALIZED space — normalize each journal line with
+        # the same norm() used to build the signature, then substring-match.
+        # Case-fold BOTH sides: norm() emits uppercase placeholders ('N') but
+        # stored signatures are lowercased ('n') — bug-9 lesson in a new spot.
+        norm_lines = [_norm(l).lower() for l in lines]
+        if hw and hw_words:
+            dev = hw.group(1)
+            errs = [l for l in lines if f"dev {dev}" in l.lower()
+                    and re.search(r"offline|i/o error|buffer i/o", l, re.I)]
+            if errs:
+                s = {"class": "insufficient_evidence", "score": "FALSE_NEGATIVE",
+                     "why": (f"device /dev/{dev} threw {len(errs)} I/O errors in "
+                             f"the window — evidence existed but the investigator "
+                             f"found nothing (normalized signature could not match)"),
+                     "lines_checked": len(lines), "inv_ts": inv.get("ts"),
+                     "signature": (inv.get("signature") or "")[:120], "best": ""}
+            elif not os.path.exists(f"/dev/{dev}"):
+                s = {"class": "insufficient_evidence", "score": "TRUE_NEGATIVE",
+                     "why": (f"device /dev/{dev} no longer exists — pattern cannot "
+                             f"recur (device removed/died; see module-24 DISK_IO "
+                             f"verdict for the hardware diagnosis)"),
+                     "lines_checked": len(lines), "inv_ts": inv.get("ts"),
+                     "signature": (inv.get("signature") or "")[:120], "best": ""}
+            else:
+                s = {"class": "insufficient_evidence", "score": "TRUE_NEGATIVE",
+                     "why": (f"device /dev/{dev} present and silent for the whole "
+                             f"window — nothing was wrong"),
+                     "lines_checked": len(lines), "inv_ts": inv.get("ts"),
+                     "signature": (inv.get("signature") or "")[:120], "best": ""}
+            st["scored"][key] = s
+            scored_new.append(s)
+            continue
+        recurred = sum(1 for l in norm_lines if tail and tail in l)
         s = {"class": "insufficient_evidence", "score": "TRUE_NEGATIVE",
              "why": (f"pattern recurred {recurred}x after the verdict — "
                      f"nothing was wrong (or nothing findable)"),
@@ -260,20 +317,29 @@ def main():
         st["scored"][key] = s
         scored_new.append(s)
 
-    # calibration per verdict class
-    by_class = {}
+    # calibration per verdict class — exclude legacy verdicts (bug 8/17):
+    # scores produced by seeds/auditors BEFORE their fix keep their entry
+    # (audit trail) but must not gate calibration forever. Same lesson as
+    # bug 16: an audit averaging over a fixed forecaster's history never
+    # clears, and re-escalates a defect that no longer exists.
+    by_class, legacy_by_class = {}, {}
     for v in st["scored"].values():
-        by_class.setdefault(v["class"], []).append(v["score"])
+        bucket = legacy_by_class if v.get("legacy_pre_fix") else by_class
+        bucket.setdefault(v["class"], []).append(v["score"])
     calibration, misdiagnosing = [], []
     for cls, scores in sorted(by_class.items()):
         correct = (scores.count("TRUE_POSITIVE") + scores.count("TRUE_NEGATIVE"))
         acc = correct / len(scores) if scores else 0.0
+        legacy = legacy_by_class.get(cls, [])
         calibration.append({"class": cls, "scored": len(scores),
                             "true_pos": scores.count("TRUE_POSITIVE"),
                             "false_pos": scores.count("FALSE_POSITIVE"),
                             "true_neg": scores.count("TRUE_NEGATIVE"),
                             "false_neg": scores.count("FALSE_NEGATIVE"),
-                            "accuracy": round(acc, 2)})
+                            "accuracy": round(acc, 2),
+                            "legacy_pre_fix": {"scored": len(legacy),
+                                               "false_pos": legacy.count("FALSE_POSITIVE"),
+                                               "false_neg": legacy.count("FALSE_NEGATIVE")}})
         if (len(scores) >= MIN_SCORED_FOR_CALIBRATION
                 and acc < BAD_CALIBRATION_THRESHOLD):
             misdiagnosing.append({"class": cls, "accuracy": round(acc, 2),

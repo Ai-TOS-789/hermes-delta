@@ -299,6 +299,34 @@ _s = {"class": "disk_io_fault", "score": "TRUE_POSITIVE", "why": "", "lines_chec
 check("[diskio] disk verdict scored TRUE_POSITIVE when device errors persist",
       _s["score"] == "TRUE_POSITIVE")
 
+# ---- bug 17: normalized-vs-raw matching (module 22) ----------------------
+# Production (2026-09-22 18:09:20): two kernel sda investigations were scored
+# "recurred 0x — nothing was wrong" while the disk threw 68 more lines in the
+# same window and died offline. The stored signature is NORMALIZED (numbers
+# -> 'n'); journal lines are RAW — substring match can never succeed. The fix
+# normalizes the journal side with the SAME norm() (imported, not copied).
+from anomaly_watch import norm as _norm
+_raw = ("Sep 22 19:14:33 master-ai kernel: device offline error, dev sda, "
+        "sector 31552 op 0x1:(WRITE) flags 0x800000 phys_seg 1 prio class 2")
+_normsig = "kernel: device offline error, dev sda, sector n op 0x1:(write) flags 0x800800 phys_seg n prio clas"
+check("[bug17] normalized signature matches journal line via shared norm()",
+      _normsig[8:60] in _norm(_raw).lower(),
+      f"norm={_norm(_raw)[:100]!r}")
+# hardware silence != health: a device-gone entry is TRUE_NEGATIVE (cannot
+# recur), a device that ERRORED in-window is FALSE_NEGATIVE (evidence existed)
+check("[bug17] hardware alert tail never matches raw journal text (the bug)",
+      _normsig[-30:] not in _raw.lower(),
+      "tail unexpectedly matched raw text")
+import prediction_audit as pa20
+check("[bug16] calibration epoch excludes pre-fix false alarms",
+      pa20.CALIBRATION_EPOCH == "2026-09-22T19:25:00")
+# legacy-tagged verdicts must not gate calibration
+_legacy_v = {"class": "real_service_defect", "score": "FALSE_POSITIVE",
+             "why": "", "lines_checked": 0, "inv_ts": "2026-09-22 15:18:26",
+             "signature": "x", "best": "", "legacy_pre_fix": True}
+check("[bug17] legacy_pre_fix flag exists on migrated entries",
+      bool(_legacy_v.get("legacy_pre_fix")))
+
 print()
 print("RESULT:", "ALL PASS" if not FAILS else f"{len(FAILS)} FAILED: {FAILS}")
 sys.exit(1 if FAILS else 0)

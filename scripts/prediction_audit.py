@@ -41,6 +41,16 @@ TRUTH_SIGNATURES = {
 MIN_SCORED_FOR_CALIBRATION = 3
 BAD_CALIBRATION_THRESHOLD = 0.4  # hit rate below this = OVER_FIRING
 
+# Calibration epoch (bug 16, 2026-09-22): the error-burst rule was re-weighted
+# at 19:25 (>=20 AND ratio>=2.0, replay: 0 false alarms over 50 samples). An
+# audit that averages over ALL history never clears: the 9 pre-fix FALSE_ALARMs
+# keep the hit rate at 0.0 forever and every delta_run re-escalates a defect
+# that no longer exists (run 26 fired OVER_FIRING while the fixed forecaster
+# produced 0 predictions). Calibration must judge the CURRENT forecaster —
+# only predictions made AFTER the epoch count toward OVER_FIRING. Pre-epoch
+# scores stay in state (audit trail) and in a legacy bucket for reference.
+CALIBRATION_EPOCH = "2026-09-22T19:25:00"
+
 def journal_window(since_iso, until_iso):
     try:
         r = subprocess.run(["journalctl", "--since", since_iso, "--until",
@@ -97,18 +107,29 @@ def main():
                      false_alarms if score == "FALSE_ALARM" else misses).append(pid)
                     scored_new.append(st["scored"][pid])
 
-    # calibration per failure type (all history)
-    by_type = {}
+    # calibration per failure type — CURRENT forecaster only (bug 16):
+    # predictions made after CALIBRATION_EPOCH. Pre-epoch scores are kept in
+    # a legacy bucket (audit trail, never deleted) but do not gate exit code.
+    epoch = time.mktime(time.strptime(CALIBRATION_EPOCH, "%Y-%m-%dT%H:%M:%S"))
+    by_type, legacy_by_type = {}, {}
     for v in st["scored"].values():
-        by_type.setdefault(v["failure"], []).append(v["score"])
+        try:
+            v_epoch = time.mktime(time.strptime(v["run_ts"], "%Y-%m-%dT%H:%M:%S"))
+        except Exception:
+            v_epoch = 0.0
+        bucket = by_type if v_epoch >= epoch else legacy_by_type
+        bucket.setdefault(v["failure"], []).append(v["score"])
     calibration, over_firing = [], []
     for ftype, scores in sorted(by_type.items()):
         hit_rate = scores.count("HIT") / len(scores) if scores else 0.0
+        legacy = legacy_by_type.get(ftype, [])
         calibration.append({"failure": ftype, "scored": len(scores),
                             "hits": scores.count("HIT"),
                             "misses": scores.count("MISS"),
                             "false_alarms": scores.count("FALSE_ALARM"),
-                            "hit_rate": round(hit_rate, 2)})
+                            "hit_rate": round(hit_rate, 2),
+                            "legacy_pre_epoch": {"scored": len(legacy),
+                                                 "false_alarms": legacy.count("FALSE_ALARM")}})
         if (len(scores) >= MIN_SCORED_FOR_CALIBRATION
                 and hit_rate < BAD_CALIBRATION_THRESHOLD):
             over_firing.append({"failure": ftype, "hit_rate": round(hit_rate, 2),
