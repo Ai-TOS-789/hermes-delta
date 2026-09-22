@@ -48,8 +48,15 @@ STATE = os.path.join(D, "belief_revision_state.json")
 # verdict to hold (mirrors auto_investigator's alert_line_only gate)
 DESKTOP_RX = re.compile(r"gvfs|tracker|gnome-shell|colord|pipewire", re.I)
 SERVICE_FAIL_RX = re.compile(
-    r"\.service|failed with result|main process exited|exit-code|signal|coredump|segfault", re.I)
+    r"failed with result|main process exited|exit-code|coredump|segfault", re.I)
 DESKTOP_NOISE_RX = re.compile(r"transient desktop-session error|desktop noise|gvfs/tracker", re.I)
+# real-defect beliefs (bug 8): a "real service defect" verdict only holds if
+# the alert line carries a REAL failure signature. "Starting/Finished
+# <unit>.service - <description containing 'failed'>" is a benign lifecycle
+# message — the unit description's wording, not a failure.
+REAL_DEFECT_RX = re.compile(r"real service defect", re.I)
+LIFECYCLE_RX = re.compile(r":\s*(starting|started|finished|stopping|stopped|"
+                          r"deactivated|reloading)\b", re.I)
 
 def load_jsonl(p):
     out = []
@@ -75,11 +82,34 @@ def main():
         if e.get("type") != "root_cause" or e.get("outcome") != "confirmed":
             continue
         rc = e.get("root_cause", "")
-        if not DESKTOP_NOISE_RX.search(rc):
-            continue  # only desktop-noise beliefs are re-checkable today
-
         alert = (e.get("alert_detail") or "").lower()
         inline = e.get("evidence_inline") or []
+
+        # ---- real-defect beliefs (bug 8 class): re-verify against the
+        # CURRENT seed rule — a benign lifecycle message ("Starting/Finished
+        # <unit>.service - <description with 'failed'>") was CONFIRMED as a
+        # real service defect under the pre-fix `\.service` regex
+        if REAL_DEFECT_RX.search(rc):
+            if LIFECYCLE_RX.search(alert) and not SERVICE_FAIL_RX.search(alert):
+                entries[idx]["outcome"] = "retracted"
+                entries[idx]["root_cause"] = (
+                    f"[RETRACTED {ts}: benign systemd lifecycle message "
+                    f"misdiagnosed as a real service defect under the pre-fix "
+                    f"'\\.service' regex (bug 8) — the unit description "
+                    f"contained 'failed', the unit itself never failed] " + rc[:400])
+                entries[idx]["retraction_reason"] = (
+                    "alert line is a Starting/Finished lifecycle message with "
+                    "no real failure signature")
+                retracted.append({"line": idx + 1, "ts": e.get("ts"),
+                                  "alert": alert[:120], "via": "lifecycle-gate"})
+                continue
+            # else: real failure signature present — belief holds
+            repaired.append({"line": idx + 1, "ts": e.get("ts"),
+                             "note": "re-verified: real failure signature in alert — belief holds"})
+            continue
+
+        if not DESKTOP_NOISE_RX.search(rc):
+            continue  # only desktop-noise beliefs are re-checkable today
 
         # ---- path (a): inline evidence — re-run the alert-line gate
         if alert:
@@ -174,17 +204,28 @@ def main():
     if retracted:
         with open(EXP, "a") as f:
             for r in retracted:
+                # per-class pattern so evoskill tracks each misdiagnosis
+                # class separately (desktop-noise vs real-defect)
+                cls = "real-defect" if r.get("via") == "lifecycle-gate" else "desktop-noise"
                 f.write(json.dumps({
                     "type": "belief_revision", "ts": ts,
                     "action": "retract",
                     "retracted_line": r["line"],
                     "retracted_ts": r["ts"],
-                    "patterns_found": ["belief-revision-retracted-desktop-noise"],
-                    "symptoms": ["NEW_PATTERN", "misdiagnosis", "desktop-noise"],
+                    "patterns_found": [f"belief-revision-retracted-{cls}"],
+                    "symptoms": ["NEW_PATTERN", "misdiagnosis", cls],
                     "root_cause": ("investigation rule matched desktop-noise regex against "
                                    "the whole journal window instead of the alert line — "
-                                   "real service failures were confirmed as noise"),
-                    "fix": "alert-line gating (auto_investigator gate=alert_line_only)",
+                                   "real service failures were confirmed as noise"
+                                   if cls == "desktop-noise" else
+                                   "investigation seed matched the unit NAME ('.service') "
+                                   "in a benign systemd lifecycle message — the unit "
+                                   "description contained 'failed' but the unit never failed"),
+                    "fix": ("alert-line gating (auto_investigator gate=alert_line_only)"
+                            if cls == "desktop-noise" else
+                            "failure-signature gating (auto_investigator non_desktop_defect "
+                            "seed now requires a real failure signature, lifecycle verbs "
+                            "disconfirm)"),
                     "outcome": "retracted",
                 }, ensure_ascii=False) + "\n")
 

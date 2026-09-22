@@ -216,13 +216,25 @@ def test(h, lines, cap):
                         f"itself: {alert_line[:110]}")
     elif gate == "non_desktop_defect":
         # converse: desktop words in the ALERT LINE disconfirm "real defect";
-        # a unit/service failure in the alert line with no desktop words
-        # confirms it
+        # a REAL failure signature in the alert line (not a mere unit NAME —
+        # bug 8, production 2026-09-22: "Starting/Finished update-notifier-
+        # download.service - ... packages that failed at package install
+        # time..." is a benign lifecycle message whose unit DESCRIPTION
+        # contains "failed"; `\.service` matched and it was CONFIRMED as a
+        # "real service defect" while the unit exited successfully every
+        # time. The confirm regex must match FAILURE SIGNATURES, and a
+        # lifecycle-verb prefix actively disconfirms.)
         if dre and re.search(dre, alert_line, re.I):
             disconf.append(f"[alert-line] desktop component named in the alert "
                            f"itself: {alert_line[:110]}")
-        elif re.search(r"\.service|failed with result|main process exited|"
-                       r"exit-code|signal|coredump|segfault", alert_line):
+        elif re.search(r":\s*(starting|started|finished|stopping|stopped|"
+                       r"deactivated|reloading)\b", alert_line):
+            disconf.append(f"[alert-line] benign systemd lifecycle message "
+                           f"(unit description wording, not a failure): "
+                           f"{alert_line[:110]}")
+        elif re.search(r"failed with result|main process exited|"
+                       r"failed to start|exit-code|coredump|segfault",
+                       alert_line):
             conf.append(f"[alert-line] service-failure signature in the alert "
                         f"itself, no desktop component: {alert_line[:110]}")
     elif cre:

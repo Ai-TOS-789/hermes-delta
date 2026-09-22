@@ -45,13 +45,33 @@ def norm(msg):
     s = re.sub(r"\s+", " ", s).strip()
     return s[:140]
 
+def canon(sig):
+    """Canonical signature KEY — placeholder case must not split counts.
+    (bug 9, production 2026-09-22: the same sudo pam_unix pattern lived as
+    'uid=n' (migrated key) AND 'uid=N' (current norm output) — counts split
+    2+1, never graduated, re-alerted as NEW_PATTERN every run. Same lesson
+    as bug 6: a parser/normalizer fix needs a state migration or every old
+    pattern looks NEW once.)"""
+    return sig.lower()
+
 def load_state():
     if os.path.exists(STATE):
         try:
-            return json.load(open(STATE))
+            st = json.load(open(STATE))
         except Exception:
-            pass
-    return {"runs": 0, "known": {}, "last_ts": None, "rates": []}
+            st = {}
+    else:
+        st = {}
+    # MIGRATION (bug 9): merge case-variant duplicate keys, SUMMING counts —
+    # 'uid=n'(2) + 'uid=N'(1) must become one key with count 3 (graduate to
+    # known-noise), not reset to the last value. Runs on every load so any
+    # consumer sees migrated state even before the next scan writes it back.
+    known = {}
+    for k, v in st.get("known", {}).items():
+        ck = canon(k)
+        known[ck] = known.get(ck, 0) + v
+    st["known"] = known
+    return st
 
 def scan_window(since_iso, until_iso):
     """Pull the journal window (system + kernel). Returns (lines, source)."""
@@ -130,7 +150,7 @@ def main():
             restarts.setdefault(u, []).append(i)
         if ERR_RE.search(msg):
             err_lines.append(i)
-            sig = f"{unit}|{norm(msg)}"
+            sig = canon(f"{unit}|{norm(msg)}")
             seen_sigs.setdefault(sig, []).append(i)
 
     # HIGH: error rate
@@ -150,7 +170,9 @@ def main():
             evidence.append(f"[anomaly:{artname}:{lns[0]}] {u} restart loop {len(lns)}x")
 
     # MEDIUM: new error patterns (skip on baseline seed run)
-    known = st.get("known", {})
+    # bug 9: compare against CANONICAL keys — state written before the
+    # canon() fix may hold case-variant duplicates ('uid=N' vs 'uid=n')
+    known = {canon(k): v for k, v in st.get("known", {}).items()}
     new_sigs = []
     for sig, lns in seen_sigs.items():
         if sig not in known:
@@ -170,9 +192,14 @@ def main():
                        "cite": "[proc:meminfo]"})
         evidence.append(f"[proc:meminfo] memory usage {mp}%")
 
-    # update state (patterns graduate to known-noise at count >= 3)
+    # update state (patterns graduate to known-noise at count >= 3).
+    # MIGRATION (bug 9): merge keys that differ only in placeholder case —
+    # counts must unify or patterns re-alert as NEW forever.
+    known = {canon(k): v for k, v in st.get("known", {}).items()}
     for sig, lns in seen_sigs.items():
-        known[sig] = known.get(sig, 0) + 1
+        known[sig] = known.get(sig, 0) + 1  # +1 per RUN (cross-run recurrence
+        # is the graduation signal — counting lines would graduate a single
+        # 3-line burst immediately, too aggressive)
     st["known"] = known
     st["runs"] = st.get("runs", 0) + 1
     st["last_ts"] = now

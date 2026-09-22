@@ -4,7 +4,7 @@ Replays every PRODUCTION case that was ever misdiagnosed, against the fixed
 code. Run: python3 test_delta.py  -> exit 0 = all pass, 1 = failures.
 Each case cites the production incident it guards against.
 """
-import json, os, re, sys
+import json, os, re, sys, time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from anomaly_watch import parse_unit as parse14
@@ -88,6 +88,77 @@ st = json.load(open(os.path.join(D, "anomaly_state.json")))
 bad = [k for k in st.get("known", {}) if k.startswith("?|")]
 check("[migration] zero unattributed signatures in known baseline",
       len(bad) == 0, f"{len(bad)} remain")
+
+# ---- bug 9: placeholder case must not split pattern counts ----------------
+from anomaly_watch import canon, norm
+check("[bug9] canon() folds case-variant signatures into one key",
+      canon("sudo|pam_unix: auth failure uid=N") ==
+      canon("sudo|pam_unix: auth failure uid=n"))
+st9 = json.load(open(os.path.join(D, "anomaly_state.json")))
+# consumers see state through load_state (which migrates + merges counts)
+from anomaly_watch import load_state as aw_load
+migrated = aw_load().get("known", {})
+casevars = {}
+for k in st9.get("known", {}):
+    casevars[canon(k)] = casevars.get(canon(k), 0) + 1
+dupes = {k: n for k, n in casevars.items() if n > 1}
+check("[bug9] state has no case-variant duplicate keys after migration",
+      not dupes, f"dupes: {list(dupes)[:3]}")
+check("[bug9] migrated counts SUM (uid=n 2 + uid=N 1 = 3 -> graduated)",
+      migrated.get("sudo|pam_unix(sudo:auth): authentication failure; "
+                   "logname=aorus uid=n euid=n tty= ruser=aorus rhost= user=aorus", 0) >= 3,
+      f"got {migrated.get('sudo|pam_unix(sudo:auth): authentication failure; logname=aorus uid=n euid=n tty= ruser=aorus rhost= user=aorus')}")
+
+# ---- bug 8: benign lifecycle message must NOT confirm 'real defect' -------
+r = investigate({"rule": "NEW_PATTERN", "severity": "MEDIUM",
+                 "detail": "systemd: starting update-notifier-download.service - download data for packages that failed at pack",
+                 "cite": "[anomaly:x:1]"},
+                "artifacts/anomaly_20260922_151826.log")
+c = first_confirmed(r)
+check("[bug8] benign lifecycle message does NOT confirm real service defect",
+      c is None or "real service defect" not in c, str(c)[:80])
+lifecycle_disconf = any(
+    "lifecycle" in d.lower()
+    for res in r if res["statement"].startswith("The new pattern indicates")
+    for d in res["disconfirming"])
+check("[bug8] lifecycle gate actively disconfirms the defect hypothesis",
+      lifecycle_disconf, "no lifecycle disconfirm found")
+
+# ---- bug 8 (belief revision): poisoned real-defect belief must retract ----
+# simulate the two production entries (experience.jsonl lines 61-62)
+import belief_revision as br18
+e = {"type": "root_cause", "outcome": "confirmed",
+     "root_cause": "**The new pattern indicates a real service defect (non-desktop unit)** (layer app, source rule-table)",
+     "alert_detail": "systemd: starting update-notifier-download.service - download data for packages that failed at pack"}
+check("[bug8-br] lifecycle alert contradicts real-defect belief (retract)",
+      bool(br18.LIFECYCLE_RX.search(e["alert_detail"].lower()))
+      and not br18.SERVICE_FAIL_RX.search(e["alert_detail"].lower()))
+e2 = {"type": "root_cause", "outcome": "confirmed",
+      "root_cause": "**The new pattern indicates a real service defect (non-desktop unit)**",
+      "alert_detail": "systemd: heal-test.service: failed with result 'exit-code'."}
+check("[bug8-br] real failure signature still holds the belief",
+      bool(br18.SERVICE_FAIL_RX.search(e2["alert_detail"].lower())))
+
+# ---- module 22: investigator audit scoring ---------------------------------
+import investigator_audit as ia22
+check("[mod22] classify: desktop noise verdict",
+      ia22.classify_verdict("**The new pattern is a transient desktop-session error (gvfs/tracker/gnome noise)**") == "desktop_noise")
+check("[mod22] classify: real defect verdict",
+      ia22.classify_verdict("**The new pattern indicates a real service defect (non-desktop unit)**") == "real_service_defect")
+check("[mod22] classify: subsystem fault verdict",
+      ia22.classify_verdict("**A desktop subsystem fault affecting user sessions**") == "desktop_subsystem_fault")
+# scoring the production update-notifier investigation: verdict at 15:18:26,
+# unit exited successfully every time -> FALSE_POSITIVE once 90min elapse
+inv = {"ts": "2026-09-22 15:18:26", "verdict": True,
+       "signature": "NEW_PATTERN:systemd: starting update-notifier-download.service",
+       "best": "**The new pattern indicates a real service defect (non-desktop unit)** (layer app, source rule-table)",
+       "alert_detail": "systemd: starting update-notifier-download.service - download data for packages that failed at pack"}
+s = ia22.score(inv, time.mktime(time.strptime("2026-09-22 17:00:00", "%Y-%m-%d %H:%M:%S")))
+check("[mod22] update-notifier misdiagnosis scored FALSE_POSITIVE",
+      s is not None and s["score"] == "FALSE_POSITIVE", str(s)[:100])
+# not yet scoreable before the delay window
+s2 = ia22.score(inv, time.mktime(time.strptime("2026-09-22 15:30:00", "%Y-%m-%d %H:%M:%S")))
+check("[mod22] verdict inside delay window is not scored yet", s2 is None)
 
 print()
 print("RESULT:", "ALL PASS" if not FAILS else f"{len(FAILS)} FAILED: {FAILS}")

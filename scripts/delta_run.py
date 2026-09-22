@@ -30,6 +30,7 @@ def main():
     hf, hf_rc = run("healer_feedback.py")  # module 17: heal->learn feedback loop
     br, br_rc = run("belief_revision.py")  # module 18: retract beliefs learned wrong
     pa, pa_rc = run("prediction_audit.py")  # module 20: score past forecasts vs truth
+    ia, ia_rc = run("investigator_audit.py")  # module 22: score past verdicts vs truth
     family_data, family_rc = run("family_lineage.py")  # module 19: autonomous family lineage
     # re-run AFTER belief revision so the recall index is rebuilt without
     # retracted entries (quarantine), and the KG reflects revised beliefs
@@ -83,6 +84,9 @@ def main():
         "prediction_audit": {"scored_this_run": pa.get("scored_this_run") if isinstance(pa, dict) else None,
                              "calibration": pa.get("calibration", []) if isinstance(pa, dict) else [],
                              "over_firing": pa.get("over_firing", []) if isinstance(pa, dict) else []},
+        "investigator_audit": {"scored_this_run": ia.get("scored_this_run") if isinstance(ia, dict) else None,
+                               "calibration": ia.get("calibration", []) if isinstance(ia, dict) else [],
+                               "misdiagnosing": ia.get("misdiagnosing", []) if isinstance(ia, dict) else []},
         "family": family_data if isinstance(family_data, dict) else {},
     }
     if anomaly:
@@ -108,6 +112,9 @@ def main():
     if pa_rc == 2:
         report["escalation"] = (report.get("escalation", "") +
                                 " prediction_audit: OVER_FIRING forecaster detected — calibration broken, weight change needs human approval").strip()
+    if ia_rc == 2:
+        report["escalation"] = (report.get("escalation", "") +
+                                " investigator_audit: MISDIAGNOSING verdict class detected — seed fix needs human approval (see investigator_audit.calibration)").strip()
     if sd_rc == 3:
         report["escalation"] = (report.get("escalation", "") +
                                 " skill_doctor: unrepairable defects found — see skill_doctor_state.json").strip()
