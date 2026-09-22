@@ -22,13 +22,14 @@ def main():
     ev, _ = run("evoskill.py")
     sd, sd_rc = run("skill_doctor.py")
     rc, _ = run("root_cause_recall.py")  # module 11: rebuild symptom index
-    fl, fl_rc = run("fleet_sentinel.py")  # module 12: fleet device health
+    fleet_data, fleet_rc = run("fleet_sentinel.py")  # module 12: fleet device health
     ax, _ = run("arxiv_scanner.py")  # module 13: literature radar
     an, an_rc = run("anomaly_watch.py")  # module 14: journal anomaly scan
     ai, ai_rc = run("auto_investigator.py")  # module 15: auto-investigate alerts
     ah, ah_rc = run("auto_healer.py")  # module 16: guarded auto-remediation
     hf, hf_rc = run("healer_feedback.py")  # module 17: heal->learn feedback loop
     br, br_rc = run("belief_revision.py")  # module 18: retract beliefs learned wrong
+    family_data, family_rc = run("family_lineage.py")  # module 19: autonomous family lineage
     # re-run AFTER belief revision so the recall index is rebuilt without
     # retracted entries (quarantine), and the KG reflects revised beliefs
     rc, _ = run("root_cause_recall.py")
@@ -54,9 +55,9 @@ def main():
         "arxiv": {"new_papers": ax.get("new_papers") if isinstance(ax, dict) else None,
                   "total_seen": ax.get("total_seen") if isinstance(ax, dict) else None,
                   "evidence": ax.get("evidence", [])[:5] if isinstance(ax, dict) else []},
-        "fleet": {"rounds": fl.get("rounds") if isinstance(fl, dict) else None,
-                  "alerts": fl.get("alerts", []) if isinstance(fl, dict) else [],
-                  "evidence": fl.get("evidence", []) if isinstance(fl, dict) else []},
+        "fleet": {"rounds": fleet_data.get("rounds") if isinstance(fleet_data, dict) else None,
+                  "alerts": fleet_data.get("alerts", []) if isinstance(fleet_data, dict) else [],
+                  "evidence": fleet_data.get("evidence", []) if isinstance(fleet_data, dict) else []},
         "anomaly": {"window_min": an.get("window_min") if isinstance(an, dict) else None,
                     "lines_scanned": an.get("lines_scanned") if isinstance(an, dict) else None,
                     "error_rate_per_min": an.get("error_rate_per_min") if isinstance(an, dict) else None,
@@ -78,10 +79,11 @@ def main():
         "belief_revision": {"retracted": br.get("retracted", []) if isinstance(br, dict) else [],
                             "held": len(br.get("held", [])) if isinstance(br, dict) else 0,
                             "citation_rotted": br.get("citation_rotted", []) if isinstance(br, dict) else []},
+        "family": family_data if isinstance(family_data, dict) else {},
     }
     if anomaly:
         report["escalation"] = "P>0.7 — artifacts captured, system-investigation protocol should run"
-    if fl_rc == 2:
+    if fleet_rc == 2:
         report["escalation"] = (report.get("escalation", "") +
                                 " fleet_sentinel: CRITICAL/HIGH device alert — see fleet_state.jsonl").strip()
     if an_rc == 2:

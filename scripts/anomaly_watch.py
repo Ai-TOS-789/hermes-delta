@@ -185,6 +185,15 @@ def main():
            "mem_pct": mp, "alerts": alerts, "evidence": evidence,
            "artifact": art,
            "auto_investigate": any(a["severity"] in ("CRITICAL", "HIGH") for a in alerts)}
+    # persist alerts for the SAME-RUN investigator (module 15). Reading
+    # delta_report.json instead made every investigation lag one run behind
+    # its evidence window (production 2026-09-22: ERROR_RATE alert
+    # investigated against the NEXT run's empty window).
+    try:
+        with open(os.path.join(D, "anomaly_alerts.json"), "w") as f:
+            json.dump(out, f, ensure_ascii=False)
+    except Exception:
+        pass
     print(json.dumps(out, indent=2, ensure_ascii=False))
     return 2 if out["auto_investigate"] else 0
 

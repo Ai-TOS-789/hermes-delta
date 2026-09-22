@@ -40,16 +40,36 @@ def sh(cmd, timeout=30):
     except Exception:
         return ""
 
-def capture(alerts, window_min):
-    """Snapshot system state per the proactive-monitoring protocol."""
-    art = sh("ls -t %s 2>/dev/null | head -1" % os.path.join(D, "artifacts"))
-    art_path = os.path.join(D, "artifacts", art) if art and art != "investigations" else None
+def capture(alerts, window_min, alert=None):
+    """Snapshot system state per the proactive-monitoring protocol.
+
+    Evidence discipline (lesson 2026-09-22, production miss): read the
+    artifact the ALERT ITSELF cites — `ls -t | head -1` grabs the CURRENT
+    run's artifact, which by investigator time is a *different* journal
+    window (the ERROR_RATE 16.25/min alert was investigated against a
+    0-error window and wrongly closed as "insufficient evidence").
+    """
+    art_path = None
+    # 1st choice: the artifact named in this alert's own citation
+    cite = (alert or {}).get("cite", "")
+    m = re.search(r"anomaly_(\d{8}_\d{6})\.log", cite)
+    if m:
+        cand = os.path.join(D, "artifacts", "anomaly_%s.log" % m.group(1))
+        if os.path.isfile(cand):
+            art_path = cand
+    # 2nd choice: newest artifact (legacy behavior)
+    if not art_path:
+        art = sh("ls -t %s 2>/dev/null | head -1" % os.path.join(D, "artifacts"))
+        if art and art != "investigations":
+            cand = os.path.join(D, "artifacts", art)
+            if os.path.isfile(cand):
+                art_path = cand
     lines = []
-    if art_path and os.path.isfile(art_path):
+    if art_path:
         lines = open(art_path, errors="replace").read().splitlines()
     return {
         "ts": time.strftime("%Y-%m-%d %H:%M:%S"),
-        "artifact": "artifacts/" + art if art_path else None,
+        "artifact": "artifacts/" + os.path.basename(art_path) if art_path else None,
         "lines": lines,
         "mem_pct": sh("free | awk '/Mem:/{printf \"%.1f\", $3/$2*100}'"),
         "swap_pct": sh("free | awk '/Swap:/{if($2>0) printf \"%.1f\", $3/$2*100; else print \"n/a\"}'"),
@@ -60,7 +80,12 @@ def capture(alerts, window_min):
     }
 
 def parse_unit(line):
-    m = re.match(r"\w{3}\s+\d+ \d+:\d+:\d+ \S+ ([^:\[\s]+)(?:\[\d+\])?: (.*)", line)
+    # journalctl short format: "<month> <day> <time> <host> <ident>[pid]: msg"
+    # \w{3} only matches ASCII month abbreviations; on a Thai-locale host the
+    # journal prints "ก.ย." — those lines parsed as unit "?" (zero attribution
+    # on a 130-line error window; production 2026-09-22). Match any non-space
+    # month token instead.
+    m = re.match(r"\S+\s+\d+ \d+:\d+:\d+ \S+ ([^:\[\s]+)(?:\[\d+\])?: (.*)", line)
     return (m.group(1).strip(), m.group(2)) if m else ("?", line)
 
 # ------------------------------------------------------- Phase 2: hypothesis seeds
@@ -132,7 +157,11 @@ def hypotheses_for(alert, cap):
     # recall: past root causes matching the alert's symptom words
     words = f"{rule} {alert.get('detail','')}"
     for r in recall(words)[:2]:
-        cands.append({"statement": f"Recalled: {r['pattern'][:120]}",
+        # strip any inherited prefix — stored statements already carry
+        # "Recalled:"/"**" from past generations and re-prefixing compounds
+        # ("Recalled: **Recalled: **..." observed in production 2026-09-22)
+        stmt = re.sub(r"^(\**recalled:\s*)+", "", r["pattern"][:120], flags=re.I)
+        cands.append({"statement": f"Recalled: {stmt}",
                       "layer": "recall", "confirm_re": "", "disconfirm_re": "",
                       "source": "root-cause-recall",
                       "citations": r.get("citations", []),
@@ -288,23 +317,34 @@ def load_state():
     return {"investigations": []}
 
 def main():
-    # trigger: delta_report anomaly alerts (CRITICAL/HIGH always; MEDIUM NEW_PATTERN
-    # per the proactive-monitoring SLA — but only once per pattern signature)
-    if not os.path.exists(REPORT):
-        print(json.dumps({"ran": False, "reason": "no delta_report.json"}))
+    # trigger: THIS run's anomaly alerts (anomaly_alerts.json, written by
+    # anomaly_watch in the same pipeline pass). The old path read
+    # delta_report.json — which delta_run writes only at the END of the
+    # pipeline — so every investigation ran one run late, against a stale
+    # alert and a mismatched evidence window.
+    ALERTS_FILE = os.path.join(D, "anomaly_alerts.json")
+    if not os.path.exists(ALERTS_FILE):
+        print(json.dumps({"ran": False, "reason": "no anomaly_alerts.json"}))
         return 0
     try:
-        rep = json.load(open(REPORT))
+        an = json.load(open(ALERTS_FILE))
     except Exception:
-        print(json.dumps({"ran": False, "reason": "unreadable delta_report.json"}))
+        print(json.dumps({"ran": False, "reason": "unreadable anomaly_alerts.json"}))
         return 0
-    alerts = (rep.get("anomaly") or {}).get("alerts", [])
+    alerts = an.get("alerts", [])
     if not alerts:
-        print(json.dumps({"ran": False, "reason": "no alerts in latest report"}))
+        print(json.dumps({"ran": False, "reason": "no alerts in this run's scan"}))
         return 0
 
     st = load_state()
-    done_sigs = {i.get("signature") for i in st["investigations"]}
+    done_sigs = {i.get("signature") for i in st["investigations"]
+                 if i.get("verdict")}          # resolved — never re-investigate
+    # unresolved (no-verdict) alerts MAY be re-investigated with fixed rules —
+    # same principle as module 18 belief revision: a botched investigation
+    # (e.g. wrong artifact window, pre-fix) must not be frozen forever.
+    # Cap at 2 attempts per signature to prevent infinite re-tries.
+    from collections import Counter
+    attempts = Counter(i.get("signature") for i in st["investigations"])
 
     ran, critical_found, reports = False, False, []
     for alert in alerts:
@@ -314,10 +354,12 @@ def main():
         if sev not in ("CRITICAL", "HIGH") and rule != "NEW_PATTERN":
             continue  # only rule-tabled alerts are auto-investigable
         if sig in done_sigs:
-            continue  # already investigated this exact alert (no re-investigation spam)
+            continue  # already resolved — no re-investigation spam
+        if attempts[sig] >= 2:
+            continue  # unresolved but already tried twice — needs a human
         ran = True
 
-        cap = capture(alerts, 0)
+        cap = capture(alerts, 0, alert=alert)
         cands = hypotheses_for(alert, cap)
         results = [test(h, cap["lines"], cap) for h in cands]
 
