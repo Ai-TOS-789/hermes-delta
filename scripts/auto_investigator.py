@@ -122,7 +122,14 @@ SEEDS = {
         # noise for NON-desktop failures (production 2026-09-22: heal-test
         # .service failures were diagnosed as desktop noise). Same lesson
         # already applied to recall candidates; now the rule-table seeds too.
-        ("The new pattern is a transient desktop-session error (gvfs/tracker/gnome noise)",
+        # Wording discipline (bug 11, production 2026-09-22): do NOT claim
+        # "transient" — tracker/gvfs chatter on this desktop machine RECURS
+        # (module 22 scored that claim FALSE_POSITIVE when the pattern
+        # recurred 3x). Claim only what the evidence shows: benign recurring
+        # chatter that needs no action. The word "transient" is also a healer
+        # KEYMAP trigger substring ("transient desktop-session error") —
+        # keep the statement free of it OR keep the KEYMAP regex in sync.
+        ("The new pattern is recurring desktop-session chatter (gvfs/tracker/gnome noise — benign on this desktop, recurrence expected)",
          "app", r"gvfs|tracker|gnome-shell|colord|pipewire", r"", "alert_line_only"),
         ("The new pattern indicates a real service defect (non-desktop unit)",
          "app", r"", r"gvfs|tracker|gnome-shell|colord|pipewire", "non_desktop_defect"),

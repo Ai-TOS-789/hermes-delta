@@ -160,6 +160,73 @@ check("[mod22] update-notifier misdiagnosis scored FALSE_POSITIVE",
 s2 = ia22.score(inv, time.mktime(time.strptime("2026-09-22 15:30:00", "%Y-%m-%d %H:%M:%S")))
 check("[mod22] verdict inside delay window is not scored yet", s2 is None)
 
+# ---- bug 11: seed rewording + scoring semantics sync -----------------------
+import auto_investigator as ai15
+check("[bug11] seed no longer claims 'transient'",
+      "transient desktop-session error" not in json.dumps(ai15.SEEDS)
+      and "recurring desktop-session chatter" in json.dumps(ai15.SEEDS))
+check("[bug11] mod22 classifies the NEW wording",
+      ia22.classify_verdict("**The new pattern is recurring desktop-session chatter (gvfs/tracker/gnome noise — benign on this desktop, recurrence expected)**") == "desktop_noise")
+check("[bug11] mod22 classifies the LEGACY wording",
+      ia22.classify_verdict("**The new pattern is a transient desktop-session error (gvfs/tracker/gnome noise)**") == "desktop_noise")
+# benign chatter recurrence is NOT a FALSE_POSITIVE under the new semantics
+inv_chatter = {"ts": "2026-09-22 15:26:34", "verdict": True,
+               "signature": "NEW_PATTERN:tracker-miner-fs-3: glib-gio-warning",
+               "best": "**The new pattern is recurring desktop-session chatter (gvfs/tracker/gnome noise)**",
+               "alert_detail": "tracker-miner-fs-3: (tracker-extract-N:H): glib-gio-warning **: N:N:N: error creating"}
+s3 = ia22.score(inv_chatter, time.mktime(time.strptime("2026-09-22 18:00:00", "%Y-%m-%d %H:%M:%S")))
+check("[bug11] benign recurring chatter scores TRUE_POSITIVE (was FALSE_POSITIVE under transient claim)",
+      s3 is not None and s3["score"] == "TRUE_POSITIVE", str(s3)[:100])
+# a real failure silenced as noise IS a FALSE_POSITIVE under any wording
+inv_fail = dict(inv_chatter, best="**The new pattern is recurring desktop-session chatter (gvfs/tracker/gnome noise)**",
+                alert_detail="systemd: heal-test.service: failed with result 'exit-code'.")
+s4 = ia22.score(inv_fail, time.mktime(time.strptime("2026-09-22 18:00:00", "%Y-%m-%d %H:%M:%S")))
+check("[bug11] real failure silenced as noise still scores FALSE_POSITIVE",
+      s4 is not None and s4["score"] == "FALSE_POSITIVE", str(s4)[:100])
+# healer KEYMAP still maps both wordings to MARK_DESKTOP_NOISE
+import auto_healer as ah16
+for wording in ("recurring desktop-session chatter", "transient desktop-session error"):
+    pb, pk = ah16.playbook_for(f"**The new pattern is {wording} (gvfs/tracker/gnome noise)**")
+    check(f"[bug11] healer KEYMAP maps '{wording[:20]}...' to MARK_DESKTOP_NOISE",
+          pb is not None and pb["id"] == "MARK_DESKTOP_NOISE", f"{pb and pb.get('id')}")
+
+# ---- bug 12: self-test pollution filter + migration -------------------------
+import anomaly_watch as aw14
+check("[bug12] is_selftest flags heal-test units",
+      aw14.is_selftest("systemd", "heal-test.service: failed with result 'exit-code'")
+      or aw14.is_selftest("heal-test.service", ""))
+# the migration must have stripped heal-test keys from the known list
+_known = json.load(open(os.path.join(D, "anomaly_state.json"))).get("known", {})
+check("[bug12] no heal-test keys remain in known-noise list",
+      not any(k.split("|", 1)[0].lower().startswith("heal-test") for k in _known),
+      str([k for k in _known if "heal-test" in k][:3]))
+# parse_unit regex survived the edit (Thai month still attributes)
+u, m = aw14.parse_unit("ก.ย. 22 11:31:59 master-ai systemd[1234]: heal-test.service: failed")
+check("[bug12] parse_unit still attributes units (regex intact)",
+      u == "systemd" and "heal-test" in m, f"{u!r} {m!r}")
+
+# ---- module 23: healer audit ------------------------------------------------
+import healer_audit as ha23
+# self-test action excluded, not unjustified
+check("[mod23] heal-test action classified EXCLUDED_SELFTEST",
+      ha23.SELFTEST_RX.search("NEW_PATTERN:systemd: heal-test.service: failed with result"))
+# real failure silenced as noise -> unjustified (substance rule)
+check("[mod23] real_fail regex catches silenced service failure",
+      bool(ha23.REAL_FAIL_RX.search("NEW_PATTERN:systemd: heal-test.service: failed with result 'exit-code'.")))
+check("[mod23] benign chatter does NOT match real_fail",
+      not ha23.REAL_FAIL_RX.search("NEW_PATTERN:tracker-miner-fs-3: glib-gio-warning error creating"))
+# join discipline: audit key is inv_ts|inv_sig, joined by report filename
+check("[mod23] joins premise via report filename",
+      ha23.load_json(ha23.INV_STATE, {}).get("investigations") is not None)
+# production audit state: 5 excluded + 8 justified, 0 unjustified
+_ha_state = ha23.load_json(ha23.STATE, {"audited": {}})
+_verdicts = [v.get("verdict") for v in _ha_state["audited"].values()]
+check("[mod23] production audit: 13 audited, 5 excluded selftest, 0 unjustified",
+      len(_verdicts) == 13 and _verdicts.count("EXCLUDED_SELFTEST") == 5
+      and _verdicts.count("UNJUSTIFIED_RETRACTED_PREMISE") == 0
+      and _verdicts.count("UNJUSTIFIED_MISDIAGNOSED_PREMISE") == 0,
+      str({v: _verdicts.count(v) for v in set(_verdicts)}))
+
 print()
 print("RESULT:", "ALL PASS" if not FAILS else f"{len(FAILS)} FAILED: {FAILS}")
 sys.exit(1 if FAILS else 0)

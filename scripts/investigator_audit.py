@@ -100,7 +100,13 @@ def load_jsonl(p):
 def classify_verdict(best):
     """Map a stored root-cause statement to a verdict class."""
     b = (best or "").lower()
-    if "transient desktop-session error" in b or "desktop noise" in b:
+    # bug 11: seed reworded "transient desktop-session error" ->
+    # "recurring desktop-session chatter" (the transient claim was an
+    # overclaim scored FALSE_POSITIVE). Accept BOTH wordings — legacy
+    # verdicts in state/history still carry the old one.
+    if ("transient desktop-session error" in b
+            or "recurring desktop-session chatter" in b
+            or "desktop noise" in b):
         return "desktop_noise"
     if "desktop subsystem fault" in b:
         return "desktop_subsystem_fault"
@@ -126,14 +132,26 @@ def score(inv, now):
     nlines = len(lines)
 
     if cls == "desktop_noise":
-        # TRUE_POSITIVE if pattern did NOT recur (transient as diagnosed)
-        # the alert detail carries the normalized message; count recurrences
-        # of its distinctive tail (last 40 chars, digits/hex normalized)
-        tail = re.sub(r"[0-9a-f]{4,}", "x", detail[-40:].strip())
-        recurred = sum(1 for l in lines if tail and tail in l.lower())
-        score_v = "TRUE_POSITIVE" if recurred < 2 else "FALSE_POSITIVE"
-        why = (f"pattern recurred {recurred}x in the {SCORE_DELAY_MIN}min "
-               f"after the verdict (transient claim)")
+        # Scoring semantics (bug 11): the seed no longer claims "transient"
+        # — it claims "benign recurring chatter, recurrence expected". So
+        # recurrence alone is NOT a FALSE_POSITIVE anymore (the old rule
+        # scored the tracker verdict FALSE_POSITIVE for recurring 3x while
+        # it stayed benign — an overclaim of the VERDICT, not a defect in
+        # the system). The verdict is wrong only if the silenced line
+        # carries a REAL failure signature (heal-test class: a genuine
+        # service failure silenced as noise).
+        has_fail = bool(REAL_FAIL_RX.search(detail))
+        if has_fail:
+            score_v = "FALSE_POSITIVE"
+            why = ("silenced line carries a real failure signature — "
+                   "a genuine service failure was marked desktop noise")
+        else:
+            score_v = "TRUE_POSITIVE"
+            tail = re.sub(r"[0-9a-f]{4,}", "x", detail[-40:].strip())
+            recurred = sum(1 for l in lines if tail and tail in l.lower())
+            why = (f"benign chatter (recurred {recurred}x in the "
+                   f"{SCORE_DELAY_MIN}min window — recurrence expected, "
+                   f"no failure signature)")
     elif cls == "real_service_defect":
         # TRUE_POSITIVE only if a REAL failure signature appeared
         unit = detail.split(":", 1)[0].strip()

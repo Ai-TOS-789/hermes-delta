@@ -110,6 +110,18 @@ def parse_unit(line):
         return m.group(1).strip(), m.group(2)
     return "?", line
 
+# SELF-TEST EXCLUSION (bug 12, production 2026-09-22): the healer's own
+# sandboxed unit tests (heal-test*.service — deliberately failing units
+# used to exercise the executed/rollback paths) polluted the production
+# known-noise list: 12 "heal-test*.service: failed with result" signatures
+# graduated as KNOWN NOISE, so the system learned "real failures = noise".
+# Test instrumentation must never enter production signal state.
+SELFTEST_UNIT_RX = re.compile(r"^heal-test", re.I)
+
+def is_selftest(unit, msg=""):
+    """True if this line originates from the pipeline's own sandbox tests."""
+    return bool(SELFTEST_UNIT_RX.search(unit or ""))
+
 def main():
     st = load_state()
     now = time.time()
@@ -139,6 +151,9 @@ def main():
     err_lines, seen_sigs, restarts = [], {}, {}
     for i, line in enumerate(lines, 1):
         unit, msg = parse_unit(line)
+        # bug 12: never count/alert on the pipeline's own sandbox test units
+        if is_selftest(unit, msg):
+            continue
         if any(p.search(msg) for p in CRIT_PATTERNS):
             alerts.append({"rule": "CRITICAL_PATTERN", "severity": "CRITICAL",
                            "detail": msg[:120],
@@ -196,6 +211,21 @@ def main():
     # MIGRATION (bug 9): merge keys that differ only in placeholder case —
     # counts must unify or patterns re-alert as NEW forever.
     known = {canon(k): v for k, v in st.get("known", {}).items()}
+    # MIGRATION (bug 12): strip self-test pollution from the known-noise
+    # list — heal-test*.service signatures that graduated as "known noise"
+    # under the pre-filter rule (12 production entries, 2026-09-22). The
+    # filter above stops NEW pollution; this removes what already landed.
+    # Idempotent: re-running on clean state removes nothing.
+    st_test_pollution = [k for k in known if k.split("|", 1)[0].lower()
+                         .startswith("heal-test")]
+    for k in st_test_pollution:
+        del known[k]
+    if st_test_pollution:
+        st.setdefault("migration", []).append({
+            "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
+            "bug": "bug12-selftest-pollution",
+            "removed_known_keys": len(st_test_pollution),
+        })
     for sig, lns in seen_sigs.items():
         known[sig] = known.get(sig, 0) + 1  # +1 per RUN (cross-run recurrence
         # is the graduation signal — counting lines would graduate a single

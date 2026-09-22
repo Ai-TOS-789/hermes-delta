@@ -31,6 +31,10 @@ def main():
     br, br_rc = run("belief_revision.py")  # module 18: retract beliefs learned wrong
     pa, pa_rc = run("prediction_audit.py")  # module 20: score past forecasts vs truth
     ia, ia_rc = run("investigator_audit.py")  # module 22: score past verdicts vs truth
+    # module 23 runs AFTER 18+22 so it audits against THIS run's retractions
+    # and verdict scores (running it earlier = 1-run-stale premises, same
+    # lag class as the module-15 alert-source bug)
+    ha, ha_rc = run("healer_audit.py")  # module 23: audit executed actions' justification
     family_data, family_rc = run("family_lineage.py")  # module 19: autonomous family lineage
     # re-run AFTER belief revision so the recall index is rebuilt without
     # retracted entries (quarantine), and the KG reflects revised beliefs
@@ -78,6 +82,12 @@ def main():
                             "already_processed": hf.get("already_processed") if isinstance(hf, dict) else None,
                             "actions": hf.get("actions", []) if isinstance(hf, dict) else [],
                             "unreliable": hf.get("unreliable", []) if isinstance(hf, dict) else []},
+        "healer_audit": {"audited_this_run": ha.get("audited_this_run") if isinstance(ha, dict) else None,
+                         "audited_total": ha.get("audited_total") if isinstance(ha, dict) else None,
+                         "unjustified": ha.get("unjustified", []) if isinstance(ha, dict) else [],
+                         "unsilenced": ha.get("unsilenced", []) if isinstance(ha, dict) else [],
+                         "calibration": ha.get("calibration", []) if isinstance(ha, dict) else [],
+                         "misfiring": ha.get("misfiring", []) if isinstance(ha, dict) else []},
         "belief_revision": {"retracted": br.get("retracted", []) if isinstance(br, dict) else [],
                             "held": len(br.get("held", [])) if isinstance(br, dict) else 0,
                             "citation_rotted": br.get("citation_rotted", []) if isinstance(br, dict) else []},
@@ -106,6 +116,9 @@ def main():
     if hf_rc == 2:
         report["escalation"] = (report.get("escalation", "") +
                                 " healer_feedback: UNRELIABLE action detected — playbook review needed").strip()
+    if ha_rc == 2:
+        report["escalation"] = (report.get("escalation", "") +
+                                " healer_audit: UNJUSTIFIED actions detected — premises were wrong, see healer_audit.unjustified").strip()
     if br_rc == 2:
         report["escalation"] = (report.get("escalation", "") +
                                 " belief_revision: beliefs retracted — past learning was wrong, see belief_revision_state.json").strip()

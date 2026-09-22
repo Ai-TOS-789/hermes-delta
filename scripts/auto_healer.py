@@ -64,10 +64,14 @@ PLAYBOOK = {
 }
 
 # keywords in the investigation's root-cause statement -> playbook entry
+# bug 11 sync: the seed statement was reworded ("recurring desktop-session
+# chatter" — "transient" was an overclaim scored FALSE_POSITIVE by module
+# 22). KEYMAP must match BOTH the new wording and legacy statements still
+# in inv_state/history, or MARK_DESKTOP_NOISE stops firing entirely.
 KEYMAP = [
     (re.compile(r"stale copy|changed on disk|needs reload|daemon-reload", re.I), "stale unit config"),
     (re.compile(r"failed (user )?unit|unit .{0,20}failed|reset-failed|real service defect", re.I), "failed user unit"),
-    (re.compile(r"transient desktop-session error|desktop noise|gvfs/tracker", re.I), "transient desktop"),
+    (re.compile(r"(transient desktop-session error|recurring desktop-session chatter|desktop noise|gvfs/tracker)", re.I), "transient desktop"),
 ]
 
 def sh(cmd, timeout=30):
