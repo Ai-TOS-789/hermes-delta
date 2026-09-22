@@ -42,6 +42,12 @@ def main():
     kg, _ = run("build_kg.py")
     preds = pf.get("predictions", []) if isinstance(pf, dict) else []
     anomaly = pf.get("auto_investigate", False) if isinstance(pf, dict) else False
+    # BUG 15 (2026-09-22): the exit code below used ONLY the predictor's
+    # flag while DISK_IO HIGH alerts were live (an_rc == 2) and the
+    # investigator had confirmed a CRITICAL root cause (ai_rc == 2) — the
+    # run exited 0 and the cron digest read "nothing happened" while a disk
+    # was failing. Exit 2 must reflect ANY component that demands attention.
+    anomaly = bool(anomaly or an_rc == 2 or ai_rc == 2)
     report = {
         "run_ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "duration_s": round(time.time() - t0, 1),

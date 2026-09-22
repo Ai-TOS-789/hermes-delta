@@ -1,0 +1,276 @@
+ก.ย. 22 14:15:01 master-ai CRON[235354]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+ก.ย. 22 14:15:01 master-ai CRON[235355]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 14:15:01 master-ai CRON[235357]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+ก.ย. 22 14:15:01 master-ai CRON[235356]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 14:15:01 master-ai CRON[235358]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_homework.py continue >> data/homework_cron.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Continue OK' >> data/homework_cron.log)
+ก.ย. 22 14:15:01 master-ai CRON[235360]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 14:15:01 master-ai CRON[235354]: pam_unix(cron:session): session closed for user root
+ก.ย. 22 14:15:01 master-ai CRON[235356]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 14:15:01 master-ai CRON[235356]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 14:15:01 master-ai CRON[235355]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 14:15:47 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 14:15:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:15:47 | 200 |     506.615µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:15:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:15:47 | 200 |     718.597µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]: {
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "pc_online": true,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "adb_rtt": 1.5,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "battery": 97,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "temp_c": 29.1,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "mem_avail_mb": 2110,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "chain_ok": true,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "last_tick": 1790061114.4349232,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "phone_link": "MTP",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "adb_rtt_ms": "",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "ollama": "up",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "usb": "down",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "wifi": "down",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "learner": "up",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "u2": "down",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "disk_used": "62%",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "phone_base_heartbeat": "none",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "ella": "unknown",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "last_watchdog": 1790061347.5639186,
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "shizuku": "down",
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]:   "link_err": "phone-away"
+ก.ย. 22 14:15:47 master-ai watchdog.sh[235479]: }
+ก.ย. 22 14:15:47 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 14:16:54 master-ai omnilearn_loop.sh[235702]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 14:17:01 master-ai CRON[235718]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+ก.ย. 22 14:17:01 master-ai CRON[235719]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)
+ก.ย. 22 14:17:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-57936d11.scope - /bin/sh -c "exit 0".
+ก.ย. 22 14:17:36 master-ai systemd[1334]: Started hermes-worker-cron-3aa53ed440f8-exec-79317d97415b4d5ab6d5148b7119984b.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/79317d97415b4d5ab6d5148b7119984b.json --ack-file /home/aorus/.hermes/cron/external-workers/79317d97415b4d5ab6d5148b7119984b.ready.
+ก.ย. 22 14:18:26 master-ai systemd[1334]: Started app-gnome-gnome\x2dcontrol\x2dcenter-236169.scope - Application launched by gnome-shell.
+ก.ย. 22 14:18:26 master-ai gnome-shell[1822]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3400004
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (II) NVIDIA(0): Setting mode "NULL"
+ก.ย. 22 14:18:33 master-ai gsd-media-keys[1988]: Unable to get default sink
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (II) NVIDIA(0): Setting mode "DP-4: nvidia-auto-select @3840x2160 +0+0 {ViewPortIn=3840x2160, ViewPortOut=3840x2160+0+0}"
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (II) event7  - Razer Razer Basilisk V2: SYN_DROPPED event - some input events have been lost.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: Internal DisplayPort
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: 2670.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: Internal TMDS
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: 165.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: Internal DisplayPort
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: 2670.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: Internal TMDS
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: 165.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: Internal TMDS
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: 165.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: Internal TMDS
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: 165.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: Internal TMDS
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: 165.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): connected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): Internal DisplayPort
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): 2670.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: disconnected
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: Internal TMDS
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: 165.0 MHz maximum pixel clock
+ก.ย. 22 14:18:33 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: [tilingshell] [TilingManager 0] new work area for monitor 0: 0 0 3840x2160
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowGroup] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowGroup] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:33 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: [tilingshell] [TilingManager 0] new work area for monitor 0: 0 0 3840x2112
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: [tilingshell] [TilingManager 0] new work area for monitor 0: 0 0 3840x2108
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaWindowActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:34 master-ai gnome-shell[1822]: Can't update stage views actor unnamed [MetaSurfaceActorX11] is on because it needs an allocation.
+ก.ย. 22 14:18:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-aaf717ffa39a44ad8c78c61d46bd2a01.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/aaf717ffa39a44ad8c78c61d46bd2a01.json --ack-file /home/aorus/.hermes/cron/external-workers/aaf717ffa39a44ad8c78c61d46bd2a01.ready.
+ก.ย. 22 14:18:50 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-aaf717ffa39a44ad8c78c61d46bd2a01.scope: Consumed 1.781s CPU time.
+ก.ย. 22 14:18:50 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 14:18:50 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:18:50 | 200 |     804.287µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:18:50 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:18:50 | 200 |     443.425µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]: {
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "pc_online": true,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "adb_rtt": 1.5,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "battery": 97,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "temp_c": 29.1,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "mem_avail_mb": 2110,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "chain_ok": true,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "last_tick": 1790061414.493588,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "phone_link": "MTP",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "adb_rtt_ms": "",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "ollama": "up",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "usb": "down",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "wifi": "down",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "learner": "up",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "u2": "down",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "disk_used": "62%",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "phone_base_heartbeat": "none",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "ella": "unknown",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "last_watchdog": 1790061530.7836905,
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "shizuku": "down",
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]:   "link_err": "phone-away"
+ก.ย. 22 14:18:50 master-ai watchdog.sh[236460]: }
+ก.ย. 22 14:18:50 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 14:18:52 master-ai gnome-shell[1822]: Error in size change accounting.
+ก.ย. 22 14:18:56 master-ai gnome-shell[1822]: Error in size change accounting.
+ก.ย. 22 14:19:16 master-ai CRON[235718]: pam_unix(cron:session): session closed for user root
+ก.ย. 22 14:19:18 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141918.972558:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:18 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141918.972583:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:18 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141918.992146:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.005506:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.010709:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.013182:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.014634:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.023499:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.054524:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.057752:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.066697:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.071049:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.078876:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.095771:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.098983:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.111591:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.115591:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.125753:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.126641:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.296777:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.297734:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.304497:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.311718:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.347324:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:19:19 master-ai brave-browser.desktop[86833]: [86908:86914:0922/141919.390101:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 14:20:01 master-ai CRON[236738]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 14:20:01 master-ai CRON[236739]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 14:20:01 master-ai systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+ก.ย. 22 14:20:01 master-ai CRON[236741]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_check.py check >> data/self_check.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Self-check OK' >> data/self_check.log)
+ก.ย. 22 14:20:01 master-ai CRON[236742]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 14:20:01 master-ai CRON[236739]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 14:20:01 master-ai CRON[236739]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 14:20:01 master-ai systemd[1]: sysstat-collect.service: Deactivated successfully.
+ก.ย. 22 14:20:01 master-ai systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+ก.ย. 22 14:20:01 master-ai crontab[236778]: (aorus) LIST (aorus)
+ก.ย. 22 14:20:01 master-ai CRON[236738]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 14:21:04 master-ai systemd[1334]: gnome-terminal-server.service: Consumed 23.304s CPU time, 23.8M memory peak, 0B memory swap peak.
+ก.ย. 22 14:21:04 master-ai gnome-shell[1822]: JS ERROR: TypeError: this.actor is null
+                                                  _syncEnabled@resource:///org/gnome/shell/ui/windowManager.js:145:25
+                                                  onStopped@resource:///org/gnome/shell/ui/windowManager.js:157:35
+                                                  _makeEaseCallback/<@resource:///org/gnome/shell/ui/environment.js:65:22
+                                                  _easeActorProperty/<@resource:///org/gnome/shell/ui/environment.js:247:60
+                                                  _destroyWindowDone@resource:///org/gnome/shell/ui/windowManager.js:1613:21
+                                                  onStopped@resource:///org/gnome/shell/ui/windowManager.js:1581:39
+                                                  _makeEaseCallback/<@resource:///org/gnome/shell/ui/environment.js:65:22
+                                                  _easeActor/<@resource:///org/gnome/shell/ui/environment.js:160:64
+                                                  @resource:///org/gnome/shell/ui/init.js:21:20
+ก.ย. 22 14:21:07 master-ai systemd[1334]: vte-spawn-75479bf5-da31-4aa9-a19d-b8d479e0f78f.scope: Consumed 4min 41.856s CPU time, 3.0G memory peak, 0B memory swap peak.
+ก.ย. 22 14:21:14 master-ai kernel: audit: type=1400 audit(1790061674.907:267): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/brave.com/brave/brave" pid=237077 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+ก.ย. 22 14:21:32 master-ai kernel: input: [AV] Samsung Soundbar B5-Series (AVRCP) as /devices/virtual/input/input26
+ก.ย. 22 14:21:32 master-ai systemd-logind[973]: Watching system buttons on /dev/input/event24 ([AV] Samsung Soundbar B5-Series (AVRCP))
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) config/udev: Adding input device [AV] Samsung Soundbar B5-Series (AVRCP) (/dev/input/event24)
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (**) [AV] Samsung Soundbar B5-Series (AVRCP): Applying InputClass "libinput keyboard catchall"
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) Using input driver 'libinput' for '[AV] Samsung Soundbar B5-Series (AVRCP)'
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) systemd-logind: got fd for /dev/input/event24 13:88 fd 52 paused 0
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (**) [AV] Samsung Soundbar B5-Series (AVRCP): always reports core events
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (**) Option "Device" "/dev/input/event24"
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) event24 - [AV] Samsung Soundbar B5-Series (AVRCP): is tagged by udev as: Keyboard
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) event24 - [AV] Samsung Soundbar B5-Series (AVRCP): device is a keyboard
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) event24 - [AV] Samsung Soundbar B5-Series (AVRCP): device removed
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (**) Option "config_info" "udev:/sys/devices/virtual/input/input26/event24"
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) XINPUT: Adding extended input device "[AV] Samsung Soundbar B5-Series (AVRCP)" (type: KEYBOARD, id 18)
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (**) Option "xkb_model" "pc105"
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (**) Option "xkb_layout" "us"
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (WW) Option "xkb_variant" requires a string value
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (WW) Option "xkb_options" requires a string value
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) event24 - [AV] Samsung Soundbar B5-Series (AVRCP): is tagged by udev as: Keyboard
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[1585]: (II) event24 - [AV] Samsung Soundbar B5-Series (AVRCP): device is a keyboard
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: The XKEYBOARD keymap compiler (xkbcomp) reports:
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86CameraAccessEnable
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86CameraAccessDisable
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86CameraAccessToggle
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86NextElement
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86PreviousElement
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86AutopilotEngageToggle
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86MarkWaypoint
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86Sos
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86NavChart
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86FishingChart
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86SingleRangeRadar
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86DualRangeRadar
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86RadarOverlay
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86TraditionalSonar
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86ClearvuSonar
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86SidevuSonar
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: > Warning:          Could not resolve keysym XF86NavInfo
+ก.ย. 22 14:21:32 master-ai /usr/libexec/gdm-x-session[237192]: Errors from xkbcomp are not fatal to the X server
+ก.ย. 22 14:21:46 master-ai bluetoothd[941]: /org/bluez/hci0/dev_54_15_89_4F_6B_EC/sep2/fd0: fd(32) ready
+ก.ย. 22 14:21:54 master-ai omnilearn_loop.sh[237309]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 14:21:56 master-ai gnome-shell[1822]: Called enable_unredirect_for_display while unredirection is enabled.
+ก.ย. 22 14:21:56 master-ai systemd[1334]: hermes-worker-cron-3aa53ed440f8-exec-79317d97415b4d5ab6d5148b7119984b.scope: Consumed 3.655s CPU time.
+ก.ย. 22 14:21:56 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 14:21:56 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:21:56 | 200 |     792.774µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:21:56 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:21:56 | 200 |     489.281µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]: {
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "pc_online": true,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "adb_rtt": 1.5,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "battery": 97,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "temp_c": 29.1,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "mem_avail_mb": 2110,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "chain_ok": true,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "last_tick": 1790061714.5501516,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "phone_link": "MTP",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "adb_rtt_ms": "",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "ollama": "up",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "usb": "down",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "wifi": "down",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "learner": "up",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "u2": "down",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "disk_used": "62%",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "phone_base_heartbeat": "none",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "ella": "unknown",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "last_watchdog": 1790061716.781299,
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "shizuku": "down",
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]:   "link_err": "phone-away"
+ก.ย. 22 14:21:56 master-ai watchdog.sh[237405]: }
+ก.ย. 22 14:21:56 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 14:22:06 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating service name='org.gnome.Nautilus' requested by ':1.37' (uid=1000 pid=1822 comm="/usr/bin/gnome-shell" label="unconfined")
+ก.ย. 22 14:22:06 master-ai nautilus[237438]: Connecting to org.freedesktop.Tracker3.Miner.Files
+ก.ย. 22 14:22:06 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.Nautilus'
+ก.ย. 22 14:22:07 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating service name='org.gnome.NautilusPreviewer' requested by ':1.304' (uid=1000 pid=237438 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 14:22:07 master-ai gnome-shell[1822]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0xa00004
+ก.ย. 22 14:22:07 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.5592' (uid=1000 pid=237438 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 14:22:07 master-ai systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ก.ย. 22 14:22:07 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.hostname1'
+ก.ย. 22 14:22:07 master-ai systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ก.ย. 22 14:22:07 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.NautilusPreviewer'

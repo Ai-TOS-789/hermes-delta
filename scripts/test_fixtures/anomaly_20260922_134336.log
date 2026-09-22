@@ -1,0 +1,315 @@
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.531009:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.535964:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.540247:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.556080:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.556176:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.559707:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.578278:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.589445:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.593400:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.614752:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.616195:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.629728:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.634069:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.652690:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.656435:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.665276:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.669846:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.684691:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.694720:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.867588:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.885579:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.888291:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.895215:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.896236:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.913304:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.936080:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.938478:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.943383:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.949754:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.977645:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.982797:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.986694:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:35 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133635.997493:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.000850:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.012968:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.014729:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.025235:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.055580:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.064140:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.071043:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.072304:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133636.191156:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:36 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 13:36:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-19bec3b7.scope - /bin/sh -c "exit 0".
+ก.ย. 22 13:36:36 master-ai ollama[1447]: [GIN] 2026/09/22 - 13:36:36 | 200 |     756.106µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 13:36:36 master-ai ollama[1447]: [GIN] 2026/09/22 - 13:36:36 | 200 |     780.289µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 13:36:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-783d610a2bc447279c9b83c038219fcf.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/783d610a2bc447279c9b83c038219fcf.json --ack-file /home/aorus/.hermes/cron/external-workers/783d610a2bc447279c9b83c038219fcf.ready.
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]: {
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "pc_online": true,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "adb_rtt": 1.5,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "battery": 97,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "temp_c": 29.1,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "mem_avail_mb": 2110,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "chain_ok": true,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "last_tick": 1790058713.8028243,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "phone_link": "MTP",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "adb_rtt_ms": "",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "ollama": "up",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "usb": "down",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "wifi": "down",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "learner": "up",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "u2": "down",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "disk_used": "62%",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "phone_base_heartbeat": "none",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "ella": "unknown",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "last_watchdog": 1790058996.7387805,
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "shizuku": "down",
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]:   "link_err": "phone-away"
+ก.ย. 22 13:36:36 master-ai watchdog.sh[229484]: }
+ก.ย. 22 13:36:36 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 13:36:39 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133639.753323:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:39 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133639.775754:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:39 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133639.832854:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:39 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133639.870844:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:39 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133639.870949:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:36:53 master-ai omnilearn_loop.sh[229652]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 13:37:09 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-783d610a2bc447279c9b83c038219fcf.scope: Consumed 1.915s CPU time.
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.709956:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.720454:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.729117:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.733418:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.733781:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.738728:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.762834:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.780196:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.788421:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.791461:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.792443:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.799900:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.817039:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.849470:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:30 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133830.849639:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:31 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133831.702487:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:31 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133831.732567:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:33 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133833.550212:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:33 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133833.550532:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133836.855281:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133836.883502:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:36 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133836.883547:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:56 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133856.935560:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:56 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133856.985495:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.172544:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.199380:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.224666:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.233687:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.235535:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.236934:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.242256:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.259571:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.281580:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.288203:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.296019:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.297072:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.307502:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.313842:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.339744:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:38:57 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133857.352213:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:02 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133902.041283:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:12 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133912.092274:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.633157:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.654272:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.670273:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.676226:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.679432:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.688717:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.704500:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.719566:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.720304:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.730395:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.743685:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.749632:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.762488:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.779524:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.794025:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:15 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133915.796753:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:18 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133918.407491:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.829210:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.896500:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.913716:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.919538:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.920115:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.920802:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.921693:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.951000:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.964714:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.969395:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.980311:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.991683:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:26 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133926.996699:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:27 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133927.003963:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:27 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133927.009434:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:27 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133927.034925:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:27 master-ai brave-browser.desktop[86833]: [86908:86914:0922/133927.043130:ERROR:net/socket/ssl_client_socket_impl.cc:949] handshake failed; returned -1, SSL error code 1, net_error -202
+ก.ย. 22 13:39:47 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 13:39:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 13:39:47 | 200 |     773.123µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 13:39:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 13:39:47 | 200 |     484.027µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]: {
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "pc_online": true,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "adb_rtt": 1.5,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "battery": 97,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "temp_c": 29.1,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "mem_avail_mb": 2110,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "chain_ok": true,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "last_tick": 1790059013.8657274,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "phone_link": "MTP",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "adb_rtt_ms": "",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "ollama": "up",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "usb": "down",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "wifi": "down",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "learner": "up",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "u2": "down",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "disk_used": "62%",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "phone_base_heartbeat": "none",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "ella": "unknown",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "last_watchdog": 1790059187.5662043,
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "shizuku": "down",
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]:   "link_err": "phone-away"
+ก.ย. 22 13:39:47 master-ai watchdog.sh[230121]: }
+ก.ย. 22 13:39:47 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 13:40:01 master-ai CRON[230142]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 13:40:01 master-ai CRON[230141]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 13:40:01 master-ai systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+ก.ย. 22 13:40:01 master-ai CRON[230144]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_check.py check >> data/self_check.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Self-check OK' >> data/self_check.log)
+ก.ย. 22 13:40:01 master-ai systemd[1]: sysstat-collect.service: Deactivated successfully.
+ก.ย. 22 13:40:01 master-ai CRON[230145]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 13:40:01 master-ai systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+ก.ย. 22 13:40:01 master-ai CRON[230142]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 13:40:01 master-ai CRON[230142]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 13:40:02 master-ai crontab[230181]: (aorus) LIST (aorus)
+ก.ย. 22 13:40:02 master-ai CRON[230141]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 13:40:05 master-ai kernel: atlantic 0000:04:00.0 enp4s0: atlantic: link change old 1000 new 0
+ก.ย. 22 13:40:11 master-ai NetworkManager[1160]: <info>  [1790059211.6004] device (enp4s0): state change: activated -> unavailable (reason 'carrier-changed', sys-iface-state: 'managed')
+ก.ย. 22 13:40:11 master-ai NetworkManager[1160]: <info>  [1790059211.6005] dhcp4 (enp4s0): canceled DHCP transaction
+ก.ย. 22 13:40:11 master-ai NetworkManager[1160]: <info>  [1790059211.6005] dhcp4 (enp4s0): activation: beginning transaction (timeout in 45 seconds)
+ก.ย. 22 13:40:11 master-ai NetworkManager[1160]: <info>  [1790059211.6005] dhcp4 (enp4s0): state changed no lease
+ก.ย. 22 13:40:11 master-ai avahi-daemon[940]: Withdrawing address record for 192.168.31.78 on enp4s0.
+ก.ย. 22 13:40:11 master-ai avahi-daemon[940]: Leaving mDNS multicast group on interface enp4s0.IPv4 with address 192.168.31.78.
+ก.ย. 22 13:40:11 master-ai avahi-daemon[940]: Interface enp4s0.IPv4 no longer relevant for mDNS.
+ก.ย. 22 13:40:11 master-ai avahi-daemon[940]: Withdrawing address record for fe80::eb35:fb2c:4167:a3b1 on enp4s0.
+ก.ย. 22 13:40:11 master-ai avahi-daemon[940]: Leaving mDNS multicast group on interface enp4s0.IPv6 with address fe80::eb35:fb2c:4167:a3b1.
+ก.ย. 22 13:40:11 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.18' (uid=0 pid=1160 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+ก.ย. 22 13:40:11 master-ai avahi-daemon[940]: Interface enp4s0.IPv6 no longer relevant for mDNS.
+ก.ย. 22 13:40:11 master-ai systemd-resolved[883]: enp4s0: Bus client set default route setting: no
+ก.ย. 22 13:40:11 master-ai systemd-resolved[883]: enp4s0: Bus client reset DNS server list.
+ก.ย. 22 13:40:11 master-ai gvfsd-wsdd[230196]: Failed to spawn the wsdd daemon: Failed to execute child process “wsdd” (No such file or directory)
+ก.ย. 22 13:40:11 master-ai gvfsd-network[98816]: Couldn't create directory monitor on wsdd:///. Error: Automount failed: Failed to spawn the underlying wsdd daemon.
+ก.ย. 22 13:40:11 master-ai systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ก.ย. 22 13:40:11 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+ก.ย. 22 13:40:11 master-ai systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ก.ย. 22 13:40:11 master-ai NetworkManager[1160]: <info>  [1790059211.6210] manager: NetworkManager state is now CONNECTED_LOCAL
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8870] device (enp4s0): carrier: link connected
+ก.ย. 22 13:40:17 master-ai kernel: atlantic 0000:04:00.0 enp4s0: atlantic: link change old 0 new 1000
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8871] device (enp4s0): state change: unavailable -> disconnected (reason 'carrier-changed', sys-iface-state: 'managed')
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8876] policy: auto-activating connection 'Wired connection 1' (1cc94668-79ca-3aa9-95b9-e1154ad9ee49)
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8879] device (enp4s0): Activation: starting connection 'Wired connection 1' (1cc94668-79ca-3aa9-95b9-e1154ad9ee49)
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8879] device (enp4s0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8880] manager: NetworkManager state is now CONNECTING
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8881] device (enp4s0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8884] device (enp4s0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:40:17 master-ai NetworkManager[1160]: <info>  [1790059217.8888] dhcp4 (enp4s0): activation: beginning transaction (timeout in 45 seconds)
+ก.ย. 22 13:40:17 master-ai avahi-daemon[940]: Joining mDNS multicast group on interface enp4s0.IPv6 with address fe80::eb35:fb2c:4167:a3b1.
+ก.ย. 22 13:40:17 master-ai avahi-daemon[940]: New relevant interface enp4s0.IPv6 for mDNS.
+ก.ย. 22 13:40:17 master-ai avahi-daemon[940]: Registering new address record for fe80::eb35:fb2c:4167:a3b1 on enp4s0.*.
+ก.ย. 22 13:40:21 master-ai systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ก.ย. 22 13:40:30 master-ai kernel: atlantic 0000:04:00.0 enp4s0: atlantic: link change old 1000 new 0
+ก.ย. 22 13:40:31 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.18' (uid=0 pid=1160 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+ก.ย. 22 13:40:31 master-ai systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ก.ย. 22 13:40:31 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+ก.ย. 22 13:40:31 master-ai systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ก.ย. 22 13:40:35 master-ai NetworkManager[1160]: <info>  [1790059235.2949] device (enp4s0): carrier: link connected
+ก.ย. 22 13:40:35 master-ai kernel: atlantic 0000:04:00.0 enp4s0: atlantic: link change old 0 new 1000
+ก.ย. 22 13:40:41 master-ai systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ก.ย. 22 13:40:47 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.18' (uid=0 pid=1160 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+ก.ย. 22 13:40:47 master-ai systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ก.ย. 22 13:40:47 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+ก.ย. 22 13:40:47 master-ai systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ก.ย. 22 13:40:57 master-ai systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9393] device (enp4s0): state change: ip-config -> failed (reason 'ip-config-unavailable', sys-iface-state: 'managed')
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9395] manager: NetworkManager state is now CONNECTED_LOCAL
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <warn>  [1790059262.9395] device (enp4s0): Activation: failed for connection 'Wired connection 1'
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9396] device (enp4s0): state change: failed -> disconnected (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:02 master-ai avahi-daemon[940]: Withdrawing address record for fe80::eb35:fb2c:4167:a3b1 on enp4s0.
+ก.ย. 22 13:41:02 master-ai avahi-daemon[940]: Leaving mDNS multicast group on interface enp4s0.IPv6 with address fe80::eb35:fb2c:4167:a3b1.
+ก.ย. 22 13:41:02 master-ai avahi-daemon[940]: Interface enp4s0.IPv6 no longer relevant for mDNS.
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9464] dhcp4 (enp4s0): canceled DHCP transaction
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9464] dhcp4 (enp4s0): activation: beginning transaction (timeout in 45 seconds)
+ก.ย. 22 13:41:02 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.18' (uid=0 pid=1160 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9464] dhcp4 (enp4s0): state changed no lease
+ก.ย. 22 13:41:02 master-ai avahi-daemon[940]: Joining mDNS multicast group on interface enp4s0.IPv6 with address fe80::eb35:fb2c:4167:a3b1.
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9467] policy: auto-activating connection 'Wired connection 1' (1cc94668-79ca-3aa9-95b9-e1154ad9ee49)
+ก.ย. 22 13:41:02 master-ai avahi-daemon[940]: New relevant interface enp4s0.IPv6 for mDNS.
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9469] device (enp4s0): Activation: starting connection 'Wired connection 1' (1cc94668-79ca-3aa9-95b9-e1154ad9ee49)
+ก.ย. 22 13:41:02 master-ai avahi-daemon[940]: Registering new address record for fe80::eb35:fb2c:4167:a3b1 on enp4s0.*.
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9470] device (enp4s0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:02 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9470] manager: NetworkManager state is now CONNECTING
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9471] device (enp4s0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9473] device (enp4s0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:02 master-ai NetworkManager[1160]: <info>  [1790059262.9475] dhcp4 (enp4s0): activation: beginning transaction (timeout in 45 seconds)
+ก.ย. 22 13:41:02 master-ai systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ก.ย. 22 13:41:02 master-ai systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ก.ย. 22 13:41:10 master-ai systemd-resolved[883]: enp4s0: Bus client set default route setting: yes
+ก.ย. 22 13:41:10 master-ai systemd-resolved[883]: enp4s0: Bus client set DNS server list to: fe80::a639:b3ff:fed2:8f2c
+ก.ย. 22 13:41:10 master-ai NetworkManager[1160]: <info>  [1790059270.0881] device (enp4s0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:10 master-ai NetworkManager[1160]: <info>  [1790059270.0888] device (enp4s0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:10 master-ai NetworkManager[1160]: <info>  [1790059270.0889] device (enp4s0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+ก.ย. 22 13:41:10 master-ai NetworkManager[1160]: <info>  [1790059270.0890] manager: NetworkManager state is now CONNECTED_LOCAL
+ก.ย. 22 13:41:10 master-ai NetworkManager[1160]: <info>  [1790059270.0891] device (enp4s0): Activation: successful, device activated.
+ก.ย. 22 13:41:12 master-ai systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ก.ย. 22 13:41:19 master-ai NetworkManager[1160]: <info>  [1790059279.5322] dhcp4 (enp4s0): state changed new lease, address=192.168.31.78, acd pending
+ก.ย. 22 13:41:19 master-ai NetworkManager[1160]: <info>  [1790059279.6885] dhcp4 (enp4s0): state changed new lease, address=192.168.31.78
+ก.ย. 22 13:41:19 master-ai NetworkManager[1160]: <info>  [1790059279.6887] manager: NetworkManager state is now CONNECTED_SITE
+ก.ย. 22 13:41:19 master-ai NetworkManager[1160]: <info>  [1790059279.6887] policy: set 'Wired connection 1' (enp4s0) as default for IPv4 routing and DNS
+ก.ย. 22 13:41:19 master-ai avahi-daemon[940]: Joining mDNS multicast group on interface enp4s0.IPv4 with address 192.168.31.78.
+ก.ย. 22 13:41:19 master-ai avahi-daemon[940]: New relevant interface enp4s0.IPv4 for mDNS.
+ก.ย. 22 13:41:19 master-ai avahi-daemon[940]: Registering new address record for 192.168.31.78 on enp4s0.IPv4.
+ก.ย. 22 13:41:19 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.18' (uid=0 pid=1160 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+ก.ย. 22 13:41:19 master-ai systemd-resolved[883]: enp4s0: Bus client set DNS server list to: 192.168.31.59, 1.1.1.3
+ก.ย. 22 13:41:19 master-ai systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ก.ย. 22 13:41:19 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+ก.ย. 22 13:41:19 master-ai systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ก.ย. 22 13:41:19 master-ai gvfsd-wsdd[230362]: Failed to spawn the wsdd daemon: Failed to execute child process “wsdd” (No such file or directory)
+ก.ย. 22 13:41:19 master-ai gvfsd-network[98816]: Couldn't create directory monitor on wsdd:///. Error: Automount failed: Failed to spawn the underlying wsdd daemon.
+ก.ย. 22 13:41:24 master-ai NetworkManager[1160]: <info>  [1790059284.5004] manager: NetworkManager state is now CONNECTED_GLOBAL
+ก.ย. 22 13:41:29 master-ai systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ก.ย. 22 13:41:53 master-ai omnilearn_loop.sh[230433]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 13:42:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-bef4c95b.scope - /bin/sh -c "exit 0".
+ก.ย. 22 13:42:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-4ceee6c6383b437c8bc38b4e0248c932.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/4ceee6c6383b437c8bc38b4e0248c932.json --ack-file /home/aorus/.hermes/cron/external-workers/4ceee6c6383b437c8bc38b4e0248c932.ready.
+ก.ย. 22 13:43:12 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-4ceee6c6383b437c8bc38b4e0248c932.scope: Consumed 1.959s CPU time.
+ก.ย. 22 13:43:12 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 13:43:12 master-ai ollama[1447]: [GIN] 2026/09/22 - 13:43:12 | 200 |     497.006µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 13:43:12 master-ai ollama[1447]: [GIN] 2026/09/22 - 13:43:12 | 200 |     478.649µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]: {
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "pc_online": true,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "adb_rtt": 1.5,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "battery": 97,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "temp_c": 29.1,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "mem_avail_mb": 2110,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "chain_ok": true,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "last_tick": 1790059313.9291685,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "phone_link": "MTP",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "adb_rtt_ms": "",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "ollama": "up",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "usb": "down",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "wifi": "down",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "learner": "up",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "u2": "down",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "disk_used": "62%",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "phone_base_heartbeat": "none",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "ella": "unknown",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "last_watchdog": 1790059392.382143,
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "shizuku": "down",
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]:   "link_err": "phone-away"
+ก.ย. 22 13:43:12 master-ai watchdog.sh[230782]: }
+ก.ย. 22 13:43:12 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).

@@ -1,0 +1,845 @@
+ก.ย. 22 17:46:47 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 17:46:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:46:47 | 200 |     499.869µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:46:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:46:47 | 200 |     793.513µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]: {
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "pc_online": true,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "adb_rtt": 1.5,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "battery": 97,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "temp_c": 29.1,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "mem_avail_mb": 2110,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "chain_ok": true,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "last_tick": 1790073717.1729429,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "phone_link": "MTP",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "adb_rtt_ms": "",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "ollama": "up",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "usb": "down",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "wifi": "down",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "learner": "up",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "u2": "down",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "disk_used": "62%",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "phone_base_heartbeat": "none",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "ella": "unknown",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "last_watchdog": 1790074007.5642176,
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "shizuku": "down",
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]:   "link_err": "phone-away"
+ก.ย. 22 17:46:47 master-ai watchdog.sh[283589]: }
+ก.ย. 22 17:46:47 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 17:46:57 master-ai omnilearn_loop.sh[283642]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 17:50:01 master-ai CRON[284861]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 17:50:01 master-ai CRON[284862]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 17:50:01 master-ai systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+ก.ย. 22 17:50:01 master-ai CRON[284864]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_check.py check >> data/self_check.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Self-check OK' >> data/self_check.log)
+ก.ย. 22 17:50:01 master-ai systemd[1]: sysstat-collect.service: Deactivated successfully.
+ก.ย. 22 17:50:01 master-ai CRON[284865]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 17:50:01 master-ai systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+ก.ย. 22 17:50:01 master-ai CRON[284862]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 17:50:01 master-ai CRON[284862]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 17:50:02 master-ai crontab[284901]: (aorus) LIST (aorus)
+ก.ย. 22 17:50:02 master-ai CRON[284861]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 17:50:36 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 17:50:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-81ad1500.scope - /bin/sh -c "exit 0".
+ก.ย. 22 17:50:36 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:50:36 | 200 |     503.783µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:50:36 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:50:36 | 200 |     835.971µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:50:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-988d8870abbc43b58ab04a2ead8257b7.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/988d8870abbc43b58ab04a2ead8257b7.json --ack-file /home/aorus/.hermes/cron/external-workers/988d8870abbc43b58ab04a2ead8257b7.ready.
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]: {
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "pc_online": true,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "adb_rtt": 1.5,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "battery": 97,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "temp_c": 29.1,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "mem_avail_mb": 2110,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "chain_ok": true,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "last_tick": 1790074017.2400718,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "phone_link": "MTP",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "adb_rtt_ms": "",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "ollama": "up",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "usb": "down",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "wifi": "down",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "learner": "up",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "u2": "down",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "disk_used": "62%",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "phone_base_heartbeat": "none",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "ella": "unknown",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "last_watchdog": 1790074236.7451892,
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "shizuku": "down",
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]:   "link_err": "phone-away"
+ก.ย. 22 17:50:36 master-ai watchdog.sh[285085]: }
+ก.ย. 22 17:50:36 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 17:50:57 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-988d8870abbc43b58ab04a2ead8257b7.scope: Consumed 1.949s CPU time.
+ก.ย. 22 17:51:57 master-ai omnilearn_loop.sh[285309]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 17:53:47 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 17:53:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:53:47 | 200 |     898.006µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:53:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:53:47 | 200 |      726.26µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]: {
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "pc_online": true,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "adb_rtt": 1.5,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "battery": 97,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "temp_c": 29.1,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "mem_avail_mb": 2110,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "chain_ok": true,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "last_tick": 1790074317.294563,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "phone_link": "MTP",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "adb_rtt_ms": "",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "ollama": "up",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "usb": "down",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "wifi": "down",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "learner": "up",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "u2": "down",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "disk_used": "62%",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "phone_base_heartbeat": "none",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "ella": "unknown",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "last_watchdog": 1790074427.5647485,
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "shizuku": "down",
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]:   "link_err": "phone-away"
+ก.ย. 22 17:53:47 master-ai watchdog.sh[285674]: }
+ก.ย. 22 17:53:47 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 17:55:01 master-ai CRON[286412]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+ก.ย. 22 17:55:01 master-ai CRON[286414]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+ก.ย. 22 17:55:01 master-ai CRON[286413]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 17:55:01 master-ai CRON[286416]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 17:55:01 master-ai CRON[286412]: pam_unix(cron:session): session closed for user root
+ก.ย. 22 17:55:01 master-ai CRON[286413]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 17:55:01 master-ai CRON[286413]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 17:55:57 master-ai kernel: usb 1-6.2: new high-speed USB device number 23 using xhci_hcd
+ก.ย. 22 17:55:57 master-ai kernel: usb 1-6.2: New USB device found, idVendor=346d, idProduct=5678, bcdDevice= 2.00
+ก.ย. 22 17:55:57 master-ai kernel: usb 1-6.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+ก.ย. 22 17:55:57 master-ai kernel: usb 1-6.2: Product: Disk 2.0
+ก.ย. 22 17:55:57 master-ai kernel: usb 1-6.2: Manufacturer: USB
+ก.ย. 22 17:55:57 master-ai kernel: usb 1-6.2: SerialNumber: 7384101234735509371
+ก.ย. 22 17:55:57 master-ai kernel: usb-storage 1-6.2:1.0: USB Mass Storage device detected
+ก.ย. 22 17:55:57 master-ai kernel: scsi host8: usb-storage 1-6.2:1.0
+ก.ย. 22 17:55:57 master-ai mtp-probe[286690]: checking bus 1, device 23: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 17:55:57 master-ai mtp-probe[286690]: bus: 1, device: 23 was not an MTP device
+ก.ย. 22 17:55:57 master-ai mtp-probe[286703]: checking bus 1, device 23: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 17:55:57 master-ai mtp-probe[286703]: bus: 1, device: 23 was not an MTP device
+ก.ย. 22 17:55:58 master-ai kernel: scsi 8:0:0:0: Direct-Access     VendorCo ProductCode      2.00 PQ: 0 ANSI: 4
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: Attached scsi generic sg0 type 0
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: [sda] 61440000 512-byte logical blocks: (31.5 GB/29.3 GiB)
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: [sda] Write Protect is off
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: [sda] Mode Sense: 03 00 00 00
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: [sda] No Caching mode page found
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: [sda] Assuming drive cache: write through
+ก.ย. 22 17:55:58 master-ai kernel:  sda: sda1 sda2
+ก.ย. 22 17:55:58 master-ai kernel: sd 8:0:0:0: [sda] Attached SCSI removable disk
+ก.ย. 22 17:55:58 master-ai kernel: ISO 9660 Extensions: Microsoft Joliet Level 3
+ก.ย. 22 17:55:58 master-ai kernel: ISO 9660 Extensions: Microsoft Joliet Level 3
+ก.ย. 22 17:55:58 master-ai kernel: ISO 9660 Extensions: RRIP_1991A
+ก.ย. 22 17:55:58 master-ai udisksd[982]: Mounted /dev/sda1 at /media/aorus/neon user 20260903-05:17 on behalf of uid 1000
+ก.ย. 22 17:56:06 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating service name='org.gnome.DiskUtility' requested by ':1.304' (uid=1000 pid=237438 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 17:56:06 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.DiskUtility'
+ก.ย. 22 17:56:19 master-ai udisksd[982]: Cleaning up mount point /media/aorus/neon user 20260903-05:17 (device 8:1 is not mounted)
+ก.ย. 22 17:56:19 master-ai systemd[1]: media-aorus-neon\x20user\x2020260903\x2d05:17.mount: Deactivated successfully.
+ก.ย. 22 17:56:19 master-ai udisksd[982]: Unmounted /dev/sda1 on behalf of uid 1000
+ก.ย. 22 17:56:19 master-ai gnome-shell[1822]: Failed to query filesystem: method Gio.File.query_filesystem_info_async: At least 4 arguments required, but only 3 passed
+ก.ย. 22 17:56:19 master-ai gnome-shell[1822]: Object .Gjs_drive-menu_gnome-shell-extensions_gcampax_github_com_extension_MountMenuItem (0x59a1d07e9360), has been already disposed — impossible to set any property on it. This might be caused by the object having been destroyed from C code using something such as destroy(), dispose(), or remove() vfuncs.
+                                                  == Stack trace for context 0x59a1c653a740 ==
+                                                  #0   59a1c66067d0 i   file:///usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js:86 (53796487e0 @ 70)
+                                                  #1   59a1c6606738 i   self-hosted:1461 (3876350caba0 @ 30)
+                                                  #2   7ffe842d6790 b   self-hosted:852 (3876350ca7e0 @ 15)
+                                                  #3   59a1c66066a8 i   resource:///org/gnome/shell/ui/init.js:21 (2e1e42f70bf0 @ 48)
+ก.ย. 22 17:56:19 master-ai udisksd[982]: This partition cannot be modified because it contains a partition table; please reinitialize layout of the whole device.
+ก.ย. 22 17:56:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-7ae49c8b.scope - /bin/sh -c "exit 0".
+ก.ย. 22 17:56:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-2de670a9217b4a6da61559982c2938d2.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/2de670a9217b4a6da61559982c2938d2.json --ack-file /home/aorus/.hermes/cron/external-workers/2de670a9217b4a6da61559982c2938d2.ready.
+ก.ย. 22 17:56:52 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-2de670a9217b4a6da61559982c2938d2.scope: Consumed 1.944s CPU time.
+ก.ย. 22 17:56:52 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 17:56:52 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:56:52 | 200 |     507.207µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:56:52 master-ai ollama[1447]: [GIN] 2026/09/22 - 17:56:52 | 200 |     769.801µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]: {
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "pc_online": true,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "adb_rtt": 1.5,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "battery": 97,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "temp_c": 29.1,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "mem_avail_mb": 2110,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "chain_ok": true,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "last_tick": 1790074317.294563,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "phone_link": "MTP",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "adb_rtt_ms": "",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "ollama": "up",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "usb": "down",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "wifi": "down",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "learner": "up",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "u2": "down",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "disk_used": "62%",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "phone_base_heartbeat": "none",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "ella": "unknown",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "last_watchdog": 1790074612.9431834,
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "shizuku": "down",
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]:   "link_err": "phone-away"
+ก.ย. 22 17:56:52 master-ai watchdog.sh[286955]: }
+ก.ย. 22 17:56:52 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 17:56:57 master-ai omnilearn_loop.sh[286967]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 17:56:57 master-ai kernel: usb 1-6.2: reset high-speed USB device number 23 using xhci_hcd
+ก.ย. 22 17:57:02 master-ai org.gnome.DiskUtility[286754]: **
+ก.ย. 22 17:57:02 master-ai org.gnome.DiskUtility[286754]: GNOME-Disks:ERROR:../src/disks/gduwindow.c:4269:on_job_cancel_button_clicked: assertion failed: (object != NULL)
+ก.ย. 22 17:57:02 master-ai org.gnome.DiskUtility[286754]: Bail out! GNOME-Disks:ERROR:../src/disks/gduwindow.c:4269:on_job_cancel_button_clicked: assertion failed: (object != NULL)
+ก.ย. 22 17:57:02 master-ai kernel: usb 1-6.2: device descriptor read/64, error -110
+ก.ย. 22 17:57:11 master-ai kernel: usb 1-6.2: USB disconnect, device number 23
+ก.ย. 22 17:57:11 master-ai udisksd[982]: [fdisk] /dev/sda: fsync device failed
+ก.ย. 22 17:57:11 master-ai udisksd[982]: Failed to close and sync the device: Input/output error
+ก.ย. 22 17:57:11 master-ai kernel: device offline error, dev sda, sector 0 op 0x1:(WRITE) flags 0x800800 phys_seg 1 prio class 2
+ก.ย. 22 17:57:11 master-ai kernel: Buffer I/O error on dev sda, logical block 0, lost async page write
+ก.ย. 22 17:57:11 master-ai udisksd[982]: Couldn't find existing drive object for device /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2/1-6.2:1.0/host8/target8:0:0/8:0:0:0/block/sda (uevent action 'change', VPD 'pci-0000:00:14.0-usb-0:6')
+ก.ย. 22 17:57:11 master-ai udisksd[982]: Couldn't find existing drive object for device /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2/1-6.2:1.0/host8/target8:0:0/8:0:0:0/block/sda (uevent action 'change', VPD 'pci-0000:00:14.0-usb-0:6')
+ก.ย. 22 17:57:11 master-ai udisksd[982]: Couldn't find existing drive object for device /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2/1-6.2:1.0/host8/target8:0:0/8:0:0:0/block/sda (uevent action 'change', VPD 'pci-0000:00:14.0-usb-0:6')
+ก.ย. 22 17:57:13 master-ai kernel: usb 1-6.2: new high-speed USB device number 24 using xhci_hcd
+ก.ย. 22 17:57:13 master-ai kernel: usb 1-6.2: New USB device found, idVendor=346d, idProduct=5678, bcdDevice= 2.00
+ก.ย. 22 17:57:13 master-ai kernel: usb 1-6.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+ก.ย. 22 17:57:13 master-ai kernel: usb 1-6.2: Product: Disk 2.0
+ก.ย. 22 17:57:13 master-ai kernel: usb 1-6.2: Manufacturer: USB
+ก.ย. 22 17:57:13 master-ai kernel: usb 1-6.2: SerialNumber: 7384101234735509371
+ก.ย. 22 17:57:13 master-ai kernel: usb-storage 1-6.2:1.0: USB Mass Storage device detected
+ก.ย. 22 17:57:13 master-ai kernel: scsi host8: usb-storage 1-6.2:1.0
+ก.ย. 22 17:57:13 master-ai mtp-probe[287029]: checking bus 1, device 24: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 17:57:13 master-ai mtp-probe[287029]: bus: 1, device: 24 was not an MTP device
+ก.ย. 22 17:57:13 master-ai mtp-probe[287042]: checking bus 1, device 24: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 17:57:13 master-ai mtp-probe[287042]: bus: 1, device: 24 was not an MTP device
+ก.ย. 22 17:57:14 master-ai kernel: scsi 8:0:0:0: Direct-Access     VendorCo ProductCode      2.00 PQ: 0 ANSI: 4
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: Attached scsi generic sg0 type 0
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: [sda] 61440000 512-byte logical blocks: (31.5 GB/29.3 GiB)
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: [sda] Write Protect is off
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: [sda] Mode Sense: 03 00 00 00
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: [sda] No Caching mode page found
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: [sda] Assuming drive cache: write through
+ก.ย. 22 17:57:14 master-ai kernel:  sda: sda2
+ก.ย. 22 17:57:14 master-ai kernel: sd 8:0:0:0: [sda] Attached SCSI removable disk
+ก.ย. 22 17:57:37 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.PackageKit' unit='packagekit.service' requested by ':1.83' (uid=1000 pid=2083 comm="/usr/bin/gnome-software --gapplication-service" label="unconfined")
+ก.ย. 22 17:57:37 master-ai systemd[1]: Starting packagekit.service - PackageKit Daemon...
+ก.ย. 22 17:57:37 master-ai PackageKit[287112]: daemon start
+ก.ย. 22 17:57:37 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.PackageKit'
+ก.ย. 22 17:57:37 master-ai systemd[1]: Started packagekit.service - PackageKit Daemon.
+ก.ย. 22 17:57:37 master-ai PackageKit[287112]: resolve transaction /863_bdcaaaec from uid 1000 finished with success after 208ms
+ก.ย. 22 17:57:37 master-ai PackageKit[287112]: get-details transaction /864_ddcaecad from uid 1000 finished with success after 164ms
+ก.ย. 22 17:57:37 master-ai PackageKit[287112]: resolve transaction /865_bbebceea from uid 1000 finished with success after 155ms
+ก.ย. 22 17:57:43 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.Flatpak.SystemHelper' unit='flatpak-system-helper.service' requested by ':1.83' (uid=1000 pid=2083 comm="/usr/bin/gnome-software --gapplication-service" label="unconfined")
+ก.ย. 22 17:57:43 master-ai systemd[1]: Starting flatpak-system-helper.service - flatpak system helper...
+ก.ย. 22 17:57:43 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.Flatpak.SystemHelper'
+ก.ย. 22 17:57:43 master-ai systemd[1]: Started flatpak-system-helper.service - flatpak system helper.
+ก.ย. 22 17:57:44 master-ai gnome-software[2083]: libostree pull from 'flathub' for app/io.gitlab.secu_design.usb-imager/x86_64/stable complete
+                                                     security: GPG: summary+commit 
+                                                     security: SIGN: disabled http: TLS
+                                                     delta: parts: 1 loose: 13
+                                                     transfer: secs: 0 size: 33.9 MB
+ก.ย. 22 17:57:44 master-ai gnome-software[2083]: /var/tmp/flatpak-cache-JFMZV3/io.gitlab.secu_design.usb-imager-JMHAW3/repo-WGQ6u7: Pulled app/io.gitlab.secu_design.usb-imager/x86_64/stable from flathub
+ก.ย. 22 17:57:44 master-ai systemd[1]: var-tmp-flatpak\x2dcache\x2dJFMZV3-io.gitlab.secu_design.usb\x2dimager\x2dJMHAW3.mount: Deactivated successfully.
+ก.ย. 22 17:57:44 master-ai flatpak-system-helper[287185]: system: Pulled app/io.gitlab.secu_design.usb-imager/x86_64/stable from /var/lib/flatpak/repo/tmp/flatpak-cache-WZIAW3/repo-WGQ6u7
+ก.ย. 22 17:57:44 master-ai flatpak-system-helper[287185]: system: Installed app/io.gitlab.secu_design.usb-imager/x86_64/stable from flathub
+ก.ย. 22 17:57:44 master-ai org.gnome.Software.desktop[2083]: Entity: line 1: parser error : xmlParseEntityRef: no name
+ก.ย. 22 17:57:44 master-ai org.gnome.Software.desktop[2083]: .</p> <p>Regularly updated with the same fixes, Chromium patches, and security &
+ก.ย. 22 17:57:44 master-ai org.gnome.Software.desktop[2083]:                                                                                ^
+ก.ย. 22 17:57:46 master-ai gnome-software[2083]: libostree pull from 'flathub' for appstream2/x86_64 complete
+                                                     security: GPG: summary+commit 
+                                                     security: SIGN: disabled http: TLS
+                                                     non-delta: meta: 7 content: 5
+                                                     transfer: secs: 0 size: 10.9 MB
+ก.ย. 22 17:57:46 master-ai gnome-software[2083]: /var/tmp/flatpak-cache-JFMZV3/repo-odxWLB: Pulled appstream2/x86_64 from flathub
+ก.ย. 22 17:57:47 master-ai flatpak-system-helper[287185]: system: Pulled appstream2/x86_64 from /var/tmp/flatpak-cache-JFMZV3/repo-odxWLB
+ก.ย. 22 17:57:50 master-ai org.gnome.Software.desktop[2083]: Entity: line 1: parser error : xmlParseEntityRef: no name
+ก.ย. 22 17:57:50 master-ai org.gnome.Software.desktop[2083]: .</p> <p>Regularly updated with the same fixes, Chromium patches, and security &
+ก.ย. 22 17:57:50 master-ai org.gnome.Software.desktop[2083]:                                                                                ^
+ก.ย. 22 17:57:51 master-ai systemd[1334]: Started app-flatpak-io.gitlab.secu_design.usb\x2dimager-2083.scope.
+ก.ย. 22 17:57:51 master-ai systemd[1334]: app-flatpak-org.gnu.pspp-2083.scope: Consumed 44.326s CPU time, 456.3M memory peak, 0B memory swap peak.
+ก.ย. 22 17:57:51 master-ai gnome-software[2083]: failed to launch GsApp: Operation was cancelled
+ก.ย. 22 17:57:51 master-ai usb-imager[287344]: Failed to load module "xapp-gtk3-module"
+ก.ย. 22 17:57:51 master-ai snapd[9316]: storehelpers.go:919: cannot refresh: snap has no updates available: "bare", "chromium", "core22", "core24", "cups", "gnome-46-2404", "gtk-common-themes", "mesa-2404", "snapd"
+ก.ย. 22 17:57:51 master-ai gnome-software[2083]: libostree pull from 'zorinos' for appstream2/x86_64 complete
+                                                     security: GPG: summary+commit 
+                                                     security: SIGN: disabled http: TLS
+                                                     non-delta: meta: 2 content: 0
+                                                     transfer: secs: 2 size: 914 bytes
+ก.ย. 22 17:57:51 master-ai gnome-software[2083]: /var/tmp/flatpak-cache-JFMZV3/repo-xNsngf: Pulled appstream2/x86_64 from zorinos
+ก.ย. 22 17:57:51 master-ai flatpak-system-helper[287185]: libostree pull from 'zorinos' for appstream2/x86_64 complete
+                                                              security: GPG: commit 
+                                                              security: SIGN: disabled 
+                                                              non-delta: meta: 1 content: 0
+                                                              transfer: secs: 0 size: 592 bytes
+ก.ย. 22 17:57:51 master-ai flatpak-system-helper[287185]: system: Pulled appstream2/x86_64 from /var/tmp/flatpak-cache-JFMZV3/repo-xNsngf
+ก.ย. 22 17:57:51 master-ai org.gnome.Software.desktop[2083]: Entity: line 1: parser error : xmlParseEntityRef: no name
+ก.ย. 22 17:57:51 master-ai org.gnome.Software.desktop[2083]: .</p> <p>Regularly updated with the same fixes, Chromium patches, and security &
+ก.ย. 22 17:57:51 master-ai org.gnome.Software.desktop[2083]:                                                                                ^
+ก.ย. 22 17:57:54 master-ai gnome-software[2083]: libostree pull from 'zorinos' for appstream2/x86_64 complete
+                                                     security: GPG: summary+commit 
+                                                     security: SIGN: disabled http: TLS
+                                                     non-delta: meta: 2 content: 0
+                                                     transfer: secs: 2 size: 914 bytes
+ก.ย. 22 17:57:54 master-ai gnome-software[2083]: /var/tmp/flatpak-cache-JFMZV3/repo-GdZ9TC: Pulled appstream2/x86_64 from zorinos
+ก.ย. 22 17:57:54 master-ai flatpak-system-helper[287185]: libostree pull from 'zorinos' for appstream2/x86_64 complete
+                                                              security: GPG: commit 
+                                                              security: SIGN: disabled 
+                                                              non-delta: meta: 1 content: 0
+                                                              transfer: secs: 0 size: 592 bytes
+ก.ย. 22 17:57:54 master-ai flatpak-system-helper[287185]: system: Pulled appstream2/x86_64 from /var/tmp/flatpak-cache-JFMZV3/repo-GdZ9TC
+ก.ย. 22 17:57:55 master-ai PackageKit[287112]: resolve transaction /866_dddcdbcd from uid 1000 finished with success after 174ms
+ก.ย. 22 17:57:55 master-ai PackageKit[287112]: resolve transaction /867_deceeada from uid 1000 finished with success after 177ms
+ก.ย. 22 17:57:55 master-ai PackageKit[287112]: get-details transaction /868_bebcabed from uid 1000 finished with success after 191ms
+ก.ย. 22 17:57:55 master-ai gnome-software[2083]: libostree pull from 'zorinos' for appstream2/x86_64 complete
+                                                     security: GPG: summary+commit 
+                                                     security: SIGN: disabled http: TLS
+                                                     non-delta: meta: 2 content: 0
+                                                     transfer: secs: 2 size: 914 bytes
+ก.ย. 22 17:57:55 master-ai gnome-software[2083]: /var/tmp/flatpak-cache-JFMZV3/repo-I0m6wl: Pulled appstream2/x86_64 from zorinos
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:55 master-ai PackageKit[287112]: get-updates transaction /869_dccecaeb from uid 1000 finished with success after 306ms
+ก.ย. 22 17:57:55 master-ai flatpak-system-helper[287185]: libostree pull from 'zorinos' for appstream2/x86_64 complete
+                                                              security: GPG: commit 
+                                                              security: SIGN: disabled 
+                                                              non-delta: meta: 1 content: 0
+                                                              transfer: secs: 0 size: 592 bytes
+ก.ย. 22 17:57:55 master-ai flatpak-system-helper[287185]: system: Pulled appstream2/x86_64 from /var/tmp/flatpak-cache-JFMZV3/repo-I0m6wl
+ก.ย. 22 17:57:56 master-ai PackageKit[287112]: resolve transaction /870_abbdedde from uid 1000 finished with success after 173ms
+ก.ย. 22 17:57:56 master-ai PackageKit[287112]: resolve transaction /871_eaecacce from uid 1000 finished with success after 179ms
+ก.ย. 22 17:57:56 master-ai PackageKit[287112]: resolve transaction /872_ebbcecbc from uid 1000 finished with success after 198ms
+ก.ย. 22 17:57:56 master-ai PackageKit[287112]: resolve transaction /873_bdcddaee from uid 1000 finished with success after 187ms
+ก.ย. 22 17:57:56 master-ai PackageKit[287112]: resolve transaction /874_bcbdbaaa from uid 1000 finished with success after 187ms
+ก.ย. 22 17:57:57 master-ai PackageKit[287112]: resolve transaction /875_ebceecda from uid 1000 finished with success after 181ms
+ก.ย. 22 17:57:57 master-ai PackageKit[287112]: resolve transaction /876_daeaaceb from uid 1000 finished with success after 183ms
+ก.ย. 22 17:57:57 master-ai PackageKit[287112]: resolve transaction /877_ebdbceaa from uid 1000 finished with success after 168ms
+ก.ย. 22 17:57:57 master-ai PackageKit[287112]: resolve transaction /878_ddaeedbb from uid 1000 finished with success after 167ms
+ก.ย. 22 17:57:57 master-ai PackageKit[287112]: resolve transaction /879_ceeeabca from uid 1000 finished with success after 160ms
+ก.ย. 22 17:57:57 master-ai PackageKit[287112]: resolve transaction /880_cbeeaead from uid 1000 finished with success after 162ms
+ก.ย. 22 17:57:58 master-ai PackageKit[287112]: resolve transaction /881_abbecdad from uid 1000 finished with success after 161ms
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai packagekitd[287112]: pk_package_set_update_severity: assertion 'update_severity == PK_INFO_ENUM_UNKNOWN || update_severity == PK_INFO_ENUM_LOW || update_severity == PK_INFO_ENUM_NORMAL || update_severity == PK_INFO_ENUM_IMPORTANT || update_severity == PK_INFO_ENUM_CRITICAL' failed
+ก.ย. 22 17:57:58 master-ai PackageKit[287112]: get-updates transaction /882_caaeacab from uid 1000 finished with success after 247ms
+ก.ย. 22 17:57:58 master-ai PackageKit[287112]: resolve transaction /883_bacaeaed from uid 1000 finished with success after 165ms
+ก.ย. 22 17:57:58 master-ai PackageKit[287112]: resolve transaction /884_bebaeabb from uid 1000 finished with success after 165ms
+ก.ย. 22 17:57:58 master-ai PackageKit[287112]: resolve transaction /885_caddabec from uid 1000 finished with success after 168ms
+ก.ย. 22 17:57:58 master-ai PackageKit[287112]: resolve transaction /886_dbeaadab from uid 1000 finished with success after 151ms
+ก.ย. 22 17:57:59 master-ai PackageKit[287112]: resolve transaction /887_adbbdabe from uid 1000 finished with success after 167ms
+ก.ย. 22 17:57:59 master-ai PackageKit[287112]: get-details transaction /888_bbcaaabb from uid 1000 finished with success after 165ms
+ก.ย. 22 17:57:59 master-ai PackageKit[287112]: resolve transaction /889_acababbd from uid 1000 finished with success after 155ms
+ก.ย. 22 17:57:59 master-ai PackageKit[287112]: resolve transaction /890_bcadcdeb from uid 1000 finished with success after 151ms
+ก.ย. 22 17:57:59 master-ai PackageKit[287112]: resolve transaction /891_edcebacd from uid 1000 finished with success after 156ms
+ก.ย. 22 17:57:59 master-ai PackageKit[287112]: resolve transaction /892_caedbabe from uid 1000 finished with success after 155ms
+ก.ย. 22 17:58:16 master-ai PackageKit[287112]: get-details transaction /893_dadaeaeb from uid 1000 finished with success after 166ms
+ก.ย. 22 17:58:16 master-ai PackageKit[287112]: get-details transaction /894_eeecdabe from uid 1000 finished with success after 163ms
+ก.ย. 22 17:58:17 master-ai PackageKit[287112]: get-details transaction /895_aedadbbd from uid 1000 finished with success after 156ms
+ก.ย. 22 17:58:21 master-ai PackageKit[287112]: get-details transaction /896_adaaeaad from uid 1000 finished with success after 166ms
+ก.ย. 22 17:58:21 master-ai PackageKit[287112]: get-details transaction /897_decebadc from uid 1000 finished with success after 169ms
+ก.ย. 22 17:58:22 master-ai PackageKit[287112]: get-details transaction /898_ceaaabcc from uid 1000 finished with success after 159ms
+ก.ย. 22 17:58:22 master-ai PackageKit[287112]: uid 1000 is trying to obtain org.freedesktop.packagekit.package-install auth (only_trusted:1)
+ก.ย. 22 17:58:22 master-ai polkitd[956]: Identity `unix-group:admin' is not valid, ignoring: No UNIX group with name admin: Success
+ก.ย. 22 17:58:24 master-ai polkitd[956]: Operator of unix-session:2 successfully authenticated as unix-user:aorus to gain TEMPORARY authorization for action org.freedesktop.packagekit.package-install for system-bus-name::1.83 [/usr/bin/gnome-software --gapplication-service] (owned by unix-user:aorus)
+ก.ย. 22 17:58:24 master-ai PackageKit[287112]: new install-packages transaction /899_acabdeca scheduled from uid 1000
+ก.ย. 22 17:58:24 master-ai PackageKit[287112]: uid 1000 obtained auth for org.freedesktop.packagekit.package-install
+ก.ย. 22 17:58:27 master-ai systemd[1334]: Started pk-debconf-helper.service - debconf communication service.
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package exfatprogs;1.2.2-1build1;amd64;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package gir1.2-udisks-2.0;2.10.1-6ubuntu1.5;amd64;+auto:ubuntu-noble-updates-main was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package python3-gnupg;0.5.2-1;all;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package python3-parted;3.12.0-6build3;amd64;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package python3-unidecode;1.3.8-1;all;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package mintstick;1.6.0-1+zorin1;all;+manual:lp_ppa_zorinos_apps-noble-main was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package python3-gnupg;0.5.2-1;all;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package exfatprogs;1.2.2-1build1;amd64;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package gir1.2-udisks-2.0;2.10.1-6ubuntu1.5;amd64;+auto:ubuntu-noble-updates-main was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package python3-parted;3.12.0-6build3;amd64;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package python3-unidecode;1.3.8-1;all;+auto:ubuntu-noble-universe was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: in /899_acabdeca for install-packages package mintstick;1.6.0-1+zorin1;all;+manual:lp_ppa_zorinos_apps-noble-main was installing for uid 1000
+ก.ย. 22 17:58:29 master-ai PackageKit[287112]: install-packages transaction /899_acabdeca from uid 1000 finished with success after 4695ms
+ก.ย. 22 17:58:29 master-ai org.gnome.Software.desktop[2083]: Entity: line 1: parser error : xmlParseEntityRef: no name
+ก.ย. 22 17:58:29 master-ai org.gnome.Software.desktop[2083]: .</p> <p>Regularly updated with the same fixes, Chromium patches, and security &
+ก.ย. 22 17:58:29 master-ai org.gnome.Software.desktop[2083]:                                                                                ^
+ก.ย. 22 17:58:30 master-ai org.gnome.Software.desktop[2083]: Entity: line 1: parser error : xmlParseEntityRef: no name
+ก.ย. 22 17:58:30 master-ai org.gnome.Software.desktop[2083]: .</p> <p>Regularly updated with the same fixes, Chromium patches, and security &
+ก.ย. 22 17:58:30 master-ai org.gnome.Software.desktop[2083]:                                                                                ^
+ก.ย. 22 17:58:30 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.6577' (uid=1000 pid=288236 comm="/usr/bin/python3 /usr/lib/mintstick/mintstick.py -" label="unconfined")
+ก.ย. 22 17:58:30 master-ai systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ก.ย. 22 17:58:30 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.hostname1'
+ก.ย. 22 17:58:30 master-ai systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ก.ย. 22 17:58:30 master-ai PackageKit[287112]: resolve transaction /900_aabbcbac from uid 1000 finished with success after 162ms
+ก.ย. 22 17:58:31 master-ai PackageKit[287112]: get-details transaction /901_abcadecb from uid 1000 finished with success after 152ms
+ก.ย. 22 17:58:31 master-ai PackageKit[287112]: get-details transaction /902_dcccbeab from uid 1000 finished with success after 147ms
+ก.ย. 22 17:58:31 master-ai PackageKit[287112]: get-details transaction /903_caaddbdc from uid 1000 finished with success after 152ms
+ก.ย. 22 17:58:39 master-ai polkitd[956]: Identity `unix-group:admin' is not valid, ignoring: No UNIX group with name admin: Success
+ก.ย. 22 17:58:41 master-ai polkitd[956]: Operator of unix-session:2 successfully authenticated as unix-user:aorus to gain TEMPORARY authorization for action com.linuxmint.mintstick-format for unix-process:288236:9733264 [/usr/bin/python3 /usr/lib/mintstick/mintstick.py -m format] (owned by unix-user:aorus)
+ก.ย. 22 17:58:41 master-ai pkexec[288305]: pam_unix(polkit-1:session): session opened for user root(uid=0) by aorus(uid=1000)
+ก.ย. 22 17:58:41 master-ai pkexec[288305]: aorus: Executing command [USER=root] [TTY=unknown] [CWD=/home/aorus] [COMMAND=/usr/bin/mint-stick-format -d /dev/sda -f fat32 -u 1000 -g 1000 -- SAT]
+ก.ย. 22 17:58:41 master-ai raw_format.py[288305]: ['dd', 'if=/dev/zero', 'of=/dev/sda', 'bs=512', 'count=1']
+ก.ย. 22 17:59:00 master-ai systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ก.ย. 22 17:59:11 master-ai kernel: usb 1-6.2: reset high-speed USB device number 24 using xhci_hcd
+ก.ย. 22 17:59:16 master-ai kernel: usb 1-6.2: device descriptor read/64, error -110
+ก.ย. 22 17:59:27 master-ai pk-debconf-help[288013]: No active connections, exiting
+ก.ย. 22 17:59:27 master-ai systemd[1334]: pk-debconf-helper.service: Consumed 1min 626ms CPU time.
+ก.ย. 22 17:59:32 master-ai kernel: usb 1-6.2: device descriptor read/64, error -110
+ก.ย. 22 17:59:33 master-ai kernel: usb 1-6.2: reset high-speed USB device number 24 using xhci_hcd
+ก.ย. 22 17:59:38 master-ai kernel: usb 1-6.2: device descriptor read/64, error -110
+ก.ย. 22 17:59:54 master-ai kernel: usb 1-6.2: device descriptor read/64, error -110
+ก.ย. 22 17:59:54 master-ai kernel: usb 1-6.2: reset high-speed USB device number 24 using xhci_hcd
+ก.ย. 22 17:59:59 master-ai kernel: usb 1-6.2: device descriptor read/8, error -110
+ก.ย. 22 18:00:01 master-ai CRON[288755]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 18:00:01 master-ai CRON[288757]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 18:00:01 master-ai CRON[288756]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 18:00:01 master-ai CRON[288758]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 18:00:01 master-ai systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+ก.ย. 22 18:00:01 master-ai CRON[288760]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_homework.py continue >> data/homework_cron.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Continue OK' >> data/homework_cron.log)
+ก.ย. 22 18:00:01 master-ai CRON[288761]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_check.py check >> data/self_check.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Self-check OK' >> data/self_check.log)
+ก.ย. 22 18:00:01 master-ai CRON[288762]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 18:00:01 master-ai CRON[288763]: (aorus) CMD (/home/aorus/Desktop/Infinix_X6895B_AI/android_cache_cleaner.sh)
+ก.ย. 22 18:00:01 master-ai CRON[288757]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 18:00:01 master-ai CRON[288757]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 18:00:01 master-ai CRON[288758]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 18:00:01 master-ai CRON[288758]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 18:00:01 master-ai systemd[1]: sysstat-collect.service: Deactivated successfully.
+ก.ย. 22 18:00:01 master-ai systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+ก.ย. 22 18:00:01 master-ai CRON[288755]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 18:00:02 master-ai crontab[288833]: (aorus) LIST (aorus)
+ก.ย. 22 18:00:02 master-ai CRON[288756]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 18:00:15 master-ai kernel: usb 1-6.2: device descriptor read/8, error -110
+ก.ย. 22 18:00:15 master-ai kernel: usb 1-6.2: reset high-speed USB device number 24 using xhci_hcd
+ก.ย. 22 18:00:20 master-ai kernel: usb 1-6.2: device descriptor read/8, error -110
+ก.ย. 22 18:00:36 master-ai kernel: usb 1-6.2: device descriptor read/8, error -110
+ก.ย. 22 18:00:36 master-ai kernel: usb 1-6.2: USB disconnect, device number 24
+ก.ย. 22 18:00:36 master-ai kernel: sda: detected capacity change from 61440000 to 0
+ก.ย. 22 18:00:36 master-ai kernel: device offline error, dev sda, sector 0 op 0x1:(WRITE) flags 0x800800 phys_seg 1 prio class 2
+ก.ย. 22 18:00:36 master-ai kernel: Buffer I/O error on dev sda, logical block 0, lost async page write
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[288341]: 1+0 records in
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[288341]: 1+0 records out
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[288341]: 512 bytes copied, 114.659 s, 0.0 kB/s
+ก.ย. 22 18:00:36 master-ai raw_format.py[288305]: ['parted', '/dev/sda', 'mktable', 'msdos']
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[289029]: Error: Error opening /dev/sda: No such device or address
+ก.ย. 22 18:00:36 master-ai raw_format.py[288305]: ['parted', '/dev/sda', 'mkpart', 'primary', 'fat32', '1', '100%']
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[289033]: Error: Error opening /dev/sda: No such device or address
+ก.ย. 22 18:00:36 master-ai raw_format.py[288305]: ['wipefs', '-a', '/dev/sda1', '--force']
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[289042]: wipefs: error: /dev/sda1: probing initialization failed: No such file or directory
+ก.ย. 22 18:00:36 master-ai raw_format.py[288305]: ['mkdosfs', '-F', '32', '-n', 'SAT', '/dev/sda1']
+ก.ย. 22 18:00:36 master-ai mintstick-format.desktop[289045]: mkdosfs: unable to open /dev/sda1: No such file or directory
+ก.ย. 22 18:00:36 master-ai kernel: usb 1-6.2: new high-speed USB device number 25 using xhci_hcd
+ก.ย. 22 18:00:37 master-ai pkexec[289054]: pam_unix(polkit-1:session): session opened for user root(uid=0) by aorus(uid=1000)
+ก.ย. 22 18:00:37 master-ai pkexec[289054]: aorus: Executing command [USER=root] [TTY=unknown] [CWD=/home/aorus] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+ก.ย. 22 18:00:38 master-ai kernel: usb 1-6.2: New USB device found, idVendor=346d, idProduct=5678, bcdDevice= 2.00
+ก.ย. 22 18:00:38 master-ai kernel: usb 1-6.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+ก.ย. 22 18:00:38 master-ai kernel: usb 1-6.2: Product: Disk 2.0
+ก.ย. 22 18:00:38 master-ai kernel: usb 1-6.2: Manufacturer: USB
+ก.ย. 22 18:00:38 master-ai kernel: usb 1-6.2: SerialNumber: 7384101234735509371
+ก.ย. 22 18:00:38 master-ai kernel: usb-storage 1-6.2:1.0: USB Mass Storage device detected
+ก.ย. 22 18:00:38 master-ai kernel: scsi host8: usb-storage 1-6.2:1.0
+ก.ย. 22 18:00:38 master-ai udisksd[982]: Couldn't find existing drive object for device /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2/1-6.2:1.0/host8/target8:0:0/8:0:0:0/block/sda (uevent action 'change', VPD 'pci-0000:00:14.0-usb-0:6.2')
+ก.ย. 22 18:00:38 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 18:00:38 master-ai mtp-probe[289085]: checking bus 1, device 25: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 18:00:38 master-ai mtp-probe[289085]: bus: 1, device: 25 was not an MTP device
+ก.ย. 22 18:00:38 master-ai ollama[1447]: [GIN] 2026/09/22 - 18:00:38 | 200 |     879.388µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 18:00:38 master-ai mtp-probe[289098]: checking bus 1, device 25: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 18:00:38 master-ai mtp-probe[289098]: bus: 1, device: 25 was not an MTP device
+ก.ย. 22 18:00:38 master-ai ollama[1447]: [GIN] 2026/09/22 - 18:00:38 | 200 |     696.674µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]: {
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "pc_online": true,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "adb_rtt": 1.5,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "battery": 97,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "temp_c": 29.1,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "mem_avail_mb": 2110,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "chain_ok": true,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "last_tick": 1790074617.3534229,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "phone_link": "MTP",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "adb_rtt_ms": "",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "ollama": "up",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "usb": "down",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "wifi": "down",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "learner": "up",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "u2": "down",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "disk_used": "62%",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "phone_base_heartbeat": "none",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "ella": "unknown",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "last_watchdog": 1790074838.4789615,
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "shizuku": "down",
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]:   "link_err": "phone-away"
+ก.ย. 22 18:00:38 master-ai watchdog.sh[289126]: }
+ก.ย. 22 18:00:38 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 18:00:39 master-ai kernel: scsi 8:0:0:0: Direct-Access     VendorCo ProductCode      2.00 PQ: 0 ANSI: 4
+ก.ย. 22 18:00:39 master-ai kernel: scsi 8:0:0:0: Attached scsi generic sg0 type 0
+ก.ย. 22 18:00:39 master-ai kernel: sd 8:0:0:0: [sda] 61440000 512-byte logical blocks: (31.5 GB/29.3 GiB)
+ก.ย. 22 18:00:39 master-ai kernel: sd 8:0:0:0: [sda] Write Protect is off
+ก.ย. 22 18:00:39 master-ai kernel: sd 8:0:0:0: [sda] Mode Sense: 03 00 00 00
+ก.ย. 22 18:00:39 master-ai kernel: sd 8:0:0:0: [sda] No Caching mode page found
+ก.ย. 22 18:00:39 master-ai kernel: sd 8:0:0:0: [sda] Assuming drive cache: write through
+ก.ย. 22 18:00:39 master-ai kernel: sd 8:0:0:0: [sda] Attached SCSI removable disk
+ก.ย. 22 18:00:39 master-ai kernel: ISO 9660 Extensions: Microsoft Joliet Level 3
+ก.ย. 22 18:00:39 master-ai kernel: ISO 9660 Extensions: Microsoft Joliet Level 3
+ก.ย. 22 18:00:39 master-ai kernel: ISO 9660 Extensions: RRIP_1991A
+ก.ย. 22 18:00:39 master-ai udisksd[982]: Mounted /dev/sda at /media/aorus/neon user 20260903-05:17 on behalf of uid 1000
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     connection-bus: usb
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     ejectable: True
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     id: VendorCo-ProductCode-7384101234735509371
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-available: True
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-compatibility: []
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-removable: True
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     model: ProductCode
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     optical: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     removable: True
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     size: 31457280000
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     vendor: VendorCo
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     connection-bus:
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     ejectable: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     id: Force-MP600-20228230000128561011
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-available: True
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-compatibility: []
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-removable: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     model: Force MP600
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     optical: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     removable: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     size: 2000398934016
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     vendor:
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     connection-bus:
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     ejectable: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     id: WDS200T1X0E-00AFY0-21213D800250
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-available: True
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-compatibility: []
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     media-removable: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     model: WDS200T1X0E-00AFY0
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     optical: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     removable: False
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     size: 2000398934016
+ก.ย. 22 18:00:44 master-ai mintstick-format.desktop[288236]:     vendor:
+ก.ย. 22 18:01:03 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating service name='org.gnome.DiskUtility' requested by ':1.304' (uid=1000 pid=237438 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 18:01:03 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.DiskUtility'
+ก.ย. 22 18:01:33 master-ai kernel: usb 1-6.2: USB disconnect, device number 25
+ก.ย. 22 18:01:33 master-ai udisksd[982]: Cleaning up mount point /media/aorus/neon user 20260903-05:17 (device 8:0 no longer exists)
+ก.ย. 22 18:01:33 master-ai systemd[1]: media-aorus-neon\x20user\x2020260903\x2d05:17.mount: Deactivated successfully.
+ก.ย. 22 18:01:33 master-ai gnome-shell[1822]: Failed to query filesystem: method Gio.File.query_filesystem_info_async: At least 4 arguments required, but only 3 passed
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:35 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/neon user 20260903-05:17: No such file or directory
+ก.ย. 22 18:01:41 master-ai kernel: usb 1-6.2: new high-speed USB device number 26 using xhci_hcd
+ก.ย. 22 18:01:41 master-ai kernel: usb 1-6.2: Device not responding to setup address.
+ก.ย. 22 18:01:41 master-ai kernel: usb 1-6.2: Device not responding to setup address.
+ก.ย. 22 18:01:41 master-ai kernel: usb 1-6.2: device not accepting address 26, error -71
+ก.ย. 22 18:01:42 master-ai kernel: usb 2-4.2: new SuperSpeed USB device number 6 using xhci_hcd
+ก.ย. 22 18:01:42 master-ai kernel: usb 2-4.2: New USB device found, idVendor=1005, idProduct=b128, bcdDevice= 1.10
+ก.ย. 22 18:01:42 master-ai kernel: usb 2-4.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+ก.ย. 22 18:01:42 master-ai kernel: usb 2-4.2: Product: FLASH DRIVE
+ก.ย. 22 18:01:42 master-ai kernel: usb 2-4.2: Manufacturer: USB3.0
+ก.ย. 22 18:01:42 master-ai kernel: usb 2-4.2: SerialNumber: 070882CB2A196624
+ก.ย. 22 18:01:42 master-ai kernel: usb-storage 2-4.2:1.0: USB Mass Storage device detected
+ก.ย. 22 18:01:42 master-ai kernel: scsi host8: usb-storage 2-4.2:1.0
+ก.ย. 22 18:01:42 master-ai mtp-probe[289418]: checking bus 2, device 6: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2"
+ก.ย. 22 18:01:42 master-ai mtp-probe[289418]: bus: 2, device: 6 was not an MTP device
+ก.ย. 22 18:01:42 master-ai mtp-probe[289430]: checking bus 2, device 6: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2"
+ก.ย. 22 18:01:42 master-ai mtp-probe[289430]: bus: 2, device: 6 was not an MTP device
+ก.ย. 22 18:01:43 master-ai kernel: scsi 8:0:0:0: Direct-Access     USB3.0   FLASH DRIVE      PMAP PQ: 0 ANSI: 6
+ก.ย. 22 18:01:43 master-ai kernel: sd 8:0:0:0: Attached scsi generic sg0 type 0
+ก.ย. 22 18:01:45 master-ai kernel: sd 8:0:0:0: [sda] 60555264 512-byte logical blocks: (31.0 GB/28.9 GiB)
+ก.ย. 22 18:01:45 master-ai kernel: sd 8:0:0:0: [sda] Write Protect is off
+ก.ย. 22 18:01:45 master-ai kernel: sd 8:0:0:0: [sda] Mode Sense: 45 00 00 00
+ก.ย. 22 18:01:45 master-ai kernel: sd 8:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+ก.ย. 22 18:01:45 master-ai kernel:  sda: sda1 sda2
+ก.ย. 22 18:01:45 master-ai kernel: sd 8:0:0:0: [sda] Attached SCSI removable disk
+ก.ย. 22 18:01:45 master-ai udisksd[982]: Mounted /dev/sda1 at /media/aorus/BOOTFORGE on behalf of uid 1000
+ก.ย. 22 18:01:57 master-ai omnilearn_loop.sh[289484]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 18:02:09 master-ai kernel: usb 2-4.2: USB disconnect, device number 6
+ก.ย. 22 18:02:09 master-ai udisksd[982]: Cleaning up mount point /media/aorus/BOOTFORGE (device 8:1 no longer exists)
+ก.ย. 22 18:02:09 master-ai systemd[1]: media-aorus-BOOTFORGE.mount: Deactivated successfully.
+ก.ย. 22 18:02:09 master-ai gnome-shell[1822]: Failed to query filesystem: method Gio.File.query_filesystem_info_async: At least 4 arguments required, but only 3 passed
+ก.ย. 22 18:02:09 master-ai gnome-shell[1822]: Object .Gjs_drive-menu_gnome-shell-extensions_gcampax_github_com_extension_MountMenuItem (0x59a1c86f7830), has been already disposed — impossible to set any property on it. This might be caused by the object having been destroyed from C code using something such as destroy(), dispose(), or remove() vfuncs.
+                                                  == Stack trace for context 0x59a1c653a740 ==
+                                                  #0   59a1c66067d0 i   file:///usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js:86 (53796487e0 @ 70)
+                                                  #1   59a1c6606738 i   self-hosted:1461 (3876350caba0 @ 30)
+                                                  #2   7ffe842d6790 b   self-hosted:852 (3876350ca7e0 @ 15)
+                                                  #3   59a1c66066a8 i   resource:///org/gnome/shell/ui/init.js:21 (2e1e42f70bf0 @ 48)
+ก.ย. 22 18:02:15 master-ai kernel: usb 1-6.2: new high-speed USB device number 28 using xhci_hcd
+ก.ย. 22 18:02:16 master-ai kernel: usb 1-6.2: New USB device found, idVendor=346d, idProduct=5678, bcdDevice= 2.00
+ก.ย. 22 18:02:16 master-ai kernel: usb 1-6.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+ก.ย. 22 18:02:16 master-ai kernel: usb 1-6.2: Product: Disk 2.0
+ก.ย. 22 18:02:16 master-ai kernel: usb 1-6.2: Manufacturer: USB
+ก.ย. 22 18:02:16 master-ai kernel: usb 1-6.2: SerialNumber: 7384101234735509371
+ก.ย. 22 18:02:16 master-ai kernel: usb-storage 1-6.2:1.0: USB Mass Storage device detected
+ก.ย. 22 18:02:16 master-ai kernel: scsi host8: usb-storage 1-6.2:1.0
+ก.ย. 22 18:02:16 master-ai mtp-probe[289587]: checking bus 1, device 28: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 18:02:16 master-ai mtp-probe[289587]: bus: 1, device: 28 was not an MTP device
+ก.ย. 22 18:02:16 master-ai mtp-probe[289599]: checking bus 1, device 28: "/sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6.2"
+ก.ย. 22 18:02:16 master-ai mtp-probe[289599]: bus: 1, device: 28 was not an MTP device
+ก.ย. 22 18:02:17 master-ai kernel: scsi 8:0:0:0: Direct-Access     VendorCo ProductCode      2.00 PQ: 0 ANSI: 4
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: Attached scsi generic sg0 type 0
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: [sda] 61440000 512-byte logical blocks: (31.5 GB/29.3 GiB)
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: [sda] Write Protect is off
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: [sda] Mode Sense: 03 00 00 00
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: [sda] No Caching mode page found
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: [sda] Assuming drive cache: write through
+ก.ย. 22 18:02:17 master-ai kernel: sd 8:0:0:0: [sda] Attached SCSI removable disk
+ก.ย. 22 18:02:17 master-ai kernel: ISO 9660 Extensions: Microsoft Joliet Level 3
+ก.ย. 22 18:02:17 master-ai kernel: ISO 9660 Extensions: Microsoft Joliet Level 3
+ก.ย. 22 18:02:17 master-ai kernel: ISO 9660 Extensions: RRIP_1991A
+ก.ย. 22 18:02:17 master-ai udisksd[982]: Mounted /dev/sda at /media/aorus/neon user 20260903-05:17 on behalf of uid 1000
+ก.ย. 22 18:02:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-40b96a3e.scope - /bin/sh -c "exit 0".
+ก.ย. 22 18:02:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-51c86acc6db14e07b84e8bd5ba1a937c.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/51c86acc6db14e07b84e8bd5ba1a937c.json --ack-file /home/aorus/.hermes/cron/external-workers/51c86acc6db14e07b84e8bd5ba1a937c.ready.
+ก.ย. 22 18:02:58 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-51c86acc6db14e07b84e8bd5ba1a937c.scope: Consumed 1.979s CPU time.
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: Internal DisplayPort
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai rtkit-daemon[1491]: Successfully made thread 290733 of process 290706 owned by '1000' high priority at nice level -15.
+ก.ย. 22 18:03:32 master-ai rtkit-daemon[1491]: Supervising 1 threads of 1 processes of 1 users.
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: Internal TMDS
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: Internal DisplayPort
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: Internal TMDS
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: Internal TMDS
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: Internal TMDS
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: Internal TMDS
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): connected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): Internal DisplayPort
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: disconnected
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: Internal TMDS
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:32 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:32 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 18:03:32 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 18:03:37 master-ai PackageKit[287112]: daemon quit
+ก.ย. 22 18:03:37 master-ai systemd[1]: packagekit.service: Deactivated successfully.
+ก.ย. 22 18:03:37 master-ai systemd[1]: packagekit.service: Consumed 9.264s CPU time.
+ก.ย. 22 18:03:47 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 18:03:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 18:03:47 | 200 |     796.839µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 18:03:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 18:03:47 | 200 |     769.105µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]: {
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "pc_online": true,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "adb_rtt": 1.5,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "battery": 97,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "temp_c": 29.1,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "mem_avail_mb": 2110,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "chain_ok": true,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "last_tick": 1790074917.4130273,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "phone_link": "MTP",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "adb_rtt_ms": "",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "ollama": "up",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "usb": "down",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "wifi": "down",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "learner": "up",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "u2": "down",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "disk_used": "62%",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "phone_base_heartbeat": "none",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "ella": "unknown",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "last_watchdog": 1790075027.570469,
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "shizuku": "down",
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]:   "link_err": "phone-away"
+ก.ย. 22 18:03:47 master-ai watchdog.sh[290911]: }
+ก.ย. 22 18:03:47 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: Internal DisplayPort
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai rtkit-daemon[1491]: Successfully made thread 291051 of process 291014 owned by '1000' high priority at nice level -15.
+ก.ย. 22 18:03:58 master-ai rtkit-daemon[1491]: Supervising 1 threads of 1 processes of 1 users.
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: Internal TMDS
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: Internal DisplayPort
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: Internal TMDS
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: Internal TMDS
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: Internal TMDS
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: Internal TMDS
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): connected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): Internal DisplayPort
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: disconnected
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: Internal TMDS
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:03:58 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:03:58 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 18:03:58 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: Internal DisplayPort
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-0: 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: Internal TMDS
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-1: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: Internal DisplayPort
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-2: 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai rtkit-daemon[1491]: Successfully made thread 291277 of process 291250 owned by '1000' high priority at nice level -15.
+ก.ย. 22 18:04:15 master-ai rtkit-daemon[1491]: Supervising 1 threads of 1 processes of 1 users.
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: Internal TMDS
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-3: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: Internal TMDS
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-4: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: Internal TMDS
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-5: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: Internal TMDS
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-6: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): connected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): Internal DisplayPort
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): LG Electronics LG HDR 4K (DFP-7): 2670.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: disconnected
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: Internal TMDS
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0): DFP-8: 165.0 MHz maximum pixel clock
+ก.ย. 22 18:04:15 master-ai /usr/libexec/gdm-x-session[1585]: (--) NVIDIA(GPU-0):
+ก.ย. 22 18:04:15 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 18:04:15 master-ai gnome-shell[1822]: value "nan" of type 'gfloat' is invalid or out of range for property 'width' of type 'gfloat'
+ก.ย. 22 18:05:01 master-ai CRON[291477]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+ก.ย. 22 18:05:01 master-ai CRON[291478]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 18:05:01 master-ai CRON[291479]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+ก.ย. 22 18:05:01 master-ai CRON[291480]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 18:05:01 master-ai CRON[291477]: pam_unix(cron:session): session closed for user root
+ก.ย. 22 18:05:01 master-ai CRON[291478]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 18:05:01 master-ai CRON[291478]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 18:05:37 master-ai NetworkManager[1160]: <info>  [1790075137.8369] dhcp4 (enx125dd46d037a): state changed new lease, address=192.168.11.45
+ก.ย. 22 18:05:37 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.18' (uid=0 pid=1160 comm="/usr/sbin/NetworkManager --no-daemon" label="unconfined")
+ก.ย. 22 18:05:37 master-ai systemd[1]: Starting NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service...
+ก.ย. 22 18:05:37 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+ก.ย. 22 18:05:37 master-ai systemd[1]: Started NetworkManager-dispatcher.service - Network Manager Script Dispatcher Service.
+ก.ย. 22 18:05:38 master-ai gnome-shell[1822]: JS ERROR: TypeError: this.actor is null
+                                                  _syncEnabled@resource:///org/gnome/shell/ui/windowManager.js:145:25
+                                                  onStopped@resource:///org/gnome/shell/ui/windowManager.js:157:35
+                                                  _makeEaseCallback/<@resource:///org/gnome/shell/ui/environment.js:65:22
+                                                  _easeActorProperty/<@resource:///org/gnome/shell/ui/environment.js:247:60
+                                                  _destroyWindowDone@resource:///org/gnome/shell/ui/windowManager.js:1613:21
+                                                  onStopped@resource:///org/gnome/shell/ui/windowManager.js:1581:39
+                                                  _makeEaseCallback/<@resource:///org/gnome/shell/ui/environment.js:65:22
+                                                  _easeActor/<@resource:///org/gnome/shell/ui/environment.js:160:64
+                                                  @resource:///org/gnome/shell/ui/init.js:21:20
+ก.ย. 22 18:05:39 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating service name='org.gnome.Nautilus' requested by ':1.37' (uid=1000 pid=1822 comm="/usr/bin/gnome-shell" label="unconfined")
+ก.ย. 22 18:05:39 master-ai nautilus[291786]: Connecting to org.freedesktop.Tracker3.Miner.Files
+ก.ย. 22 18:05:39 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.Nautilus'
+ก.ย. 22 18:05:40 master-ai gnome-shell[1822]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0xa00004
+ก.ย. 22 18:05:40 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating service name='org.gnome.NautilusPreviewer' requested by ':1.334' (uid=1000 pid=291786 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 18:05:40 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.6653' (uid=1000 pid=291786 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 18:05:40 master-ai systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ก.ย. 22 18:05:40 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.hostname1'
+ก.ย. 22 18:05:40 master-ai systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ก.ย. 22 18:05:41 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.NautilusPreviewer'
+ก.ย. 22 18:05:42 master-ai systemd[1334]: vte-spawn-8a1d2d03-7684-4983-8c52-e9ce010faf3d.scope: Consumed 4min 42.704s CPU time.
+ก.ย. 22 18:05:47 master-ai systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+ก.ย. 22 18:06:11 master-ai systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ก.ย. 22 18:06:37 master-ai nautilus[291786]: Broken accounting of active state for widget 0x60d07204f9c0(NautilusNameCell)
+ก.ย. 22 18:06:37 master-ai nautilus[291786]: Broken accounting of active state for widget 0x60d07204f100(GtkColumnViewCellWidget)
+ก.ย. 22 18:06:37 master-ai nautilus[291786]: Broken accounting of active state for widget 0x60d07204eb40(GtkColumnViewRowWidget)
+ก.ย. 22 18:06:45 master-ai gnome-shell[1822]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0xa00307
+ก.ย. 22 18:06:54 master-ai systemd[1334]: Started vte-spawn-fa6f1571-aa4f-44b8-8ab3-09f95d0574c9.scope - VTE child process 292078 launched by gnome-terminal-server process 239547.
+ก.ย. 22 18:06:54 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 18:06:54 master-ai ollama[1447]: [GIN] 2026/09/22 - 18:06:54 | 200 |     983.539µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 18:06:54 master-ai ollama[1447]: [GIN] 2026/09/22 - 18:06:54 | 200 |      764.34µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]: {
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "pc_online": true,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "adb_rtt": 1.5,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "battery": 97,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "temp_c": 29.1,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "mem_avail_mb": 2110,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "chain_ok": true,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "last_tick": 1790074917.4130273,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "phone_link": "MTP",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "adb_rtt_ms": "",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "ollama": "up",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "usb": "down",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "wifi": "down",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "learner": "up",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "u2": "down",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "disk_used": "62%",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "phone_base_heartbeat": "none",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "ella": "unknown",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "last_watchdog": 1790075214.0703409,
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "shizuku": "down",
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]:   "link_err": "phone-away"
+ก.ย. 22 18:06:54 master-ai watchdog.sh[292118]: }
+ก.ย. 22 18:06:54 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 18:06:57 master-ai omnilearn_loop.sh[292131]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 18:07:04 master-ai systemd[1334]: Started vte-spawn-9046a6d1-b28d-4c23-b7f1-0305440bf875.scope - VTE child process 292151 launched by gnome-terminal-server process 239547.
+ก.ย. 22 18:07:06 master-ai gnome-shell[1822]: Object .Gjs_ui_messageTray_Notification (0x59a1cb7c36b0), has been already disposed — impossible to emit any signal on it. This might be caused by the object having been destroyed from C code using something such as destroy(), dispose(), or remove() vfuncs.
+                                                  == Stack trace for context 0x59a1c653a740 ==
+                                                  #0   7ffe842d57c0 b   resource:///org/gnome/shell/ui/messageTray.js:477 (12c5f6237060 @ 74)
+                                                  #1   59a1c66067c0 i   resource:///org/gnome/shell/ui/messageTray.js:473 (12c5f6236fb0 @ 63)
+                                                  #2   59a1c6606738 i   resource:///org/gnome/shell/ui/calendar.js:812 (12c5f623f9c0 @ 22)
+                                                  #3   59a1c66066a8 i   resource:///org/gnome/shell/ui/init.js:21 (2e1e42f70bf0 @ 48)
+ก.ย. 22 18:07:06 master-ai gnome-shell[1822]: Object .Gjs_ui_messageTray_Notification (0x59a1cb7c36b0), has been already disposed — impossible to access it. This might be caused by the object having been destroyed from C code using something such as destroy(), dispose(), or remove() vfuncs.
+                                                  == Stack trace for context 0x59a1c653a740 ==
+                                                  #0   7ffe842d57c0 b   resource:///org/gnome/shell/ui/messageTray.js:483 (12c5f6237060 @ 148)
+                                                  #1   59a1c66067c0 i   resource:///org/gnome/shell/ui/messageTray.js:473 (12c5f6236fb0 @ 63)
+                                                  #2   59a1c6606738 i   resource:///org/gnome/shell/ui/calendar.js:812 (12c5f623f9c0 @ 22)
+                                                  #3   59a1c66066a8 i   resource:///org/gnome/shell/ui/init.js:21 (2e1e42f70bf0 @ 48)
+ก.ย. 22 18:07:56 master-ai systemd[1]: flatpak-system-helper.service: Deactivated successfully.
+ก.ย. 22 18:07:56 master-ai systemd[1]: flatpak-system-helper.service: Consumed 1.249s CPU time.
+ก.ย. 22 18:08:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-4dbc29e2.scope - /bin/sh -c "exit 0".
+ก.ย. 22 18:08:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-6246c23376a44d6cae30654db71d1c68.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/6246c23376a44d6cae30654db71d1c68.json --ack-file /home/aorus/.hermes/cron/external-workers/6246c23376a44d6cae30654db71d1c68.ready.
+ก.ย. 22 18:09:19 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-6246c23376a44d6cae30654db71d1c68.scope: Consumed 2.313s CPU time.

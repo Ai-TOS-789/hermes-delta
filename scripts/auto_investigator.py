@@ -93,6 +93,10 @@ def parse_unit(line):
 # confirm pattern, disconfirm pattern). Recall adds cross-session candidates.
 SEEDS = {
     "OOM": [
+        # NOTE (bug 14, 2026-09-22): anomaly_watch never emitted a rule named
+        # "OOM" — it emits CRITICAL_PATTERN for the same lines, so these two
+        # seeds were dead code and a REAL OOM kill would have been
+        # investigated with zero hypotheses. Both rules now carry the seeds.
         ("A process leaked memory until the kernel OOM-killer reclaimed it",
          "kernel", r"invoked oom-killer|Out of memory: Killed process\s+(\S+)",
          r""),
@@ -100,6 +104,31 @@ SEEDS = {
     "OOM_KILLED": [
         ("The OOM victim itself was the memory hog (killed pid == top-RSS process)",
          "app", r"Out of memory: Killed process\s+\d+\s+\((\S+)\)",
+         r""),
+    ],
+    "CRITICAL_PATTERN": [
+        # bug 14: CRITICAL_PATTERN is the rule anomaly_watch actually emits
+        # for OOM kills / panics / lockups — mirror the OOM seeds here.
+        ("A process leaked memory until the kernel OOM-killer reclaimed it",
+         "kernel", r"invoked oom-killer|Out of memory: Killed process\s+(\S+)",
+         r""),
+        ("The OOM victim itself was the memory hog (killed pid == top-RSS process)",
+         "app", r"Out of memory: Killed process\s+\d+\s+\((\S+)\)",
+         r""),
+    ],
+    "DISK_IO": [
+        # production 2026-09-22: sda USB drive write-fail ("device offline
+        # error, dev sda, sector 0 op 0x1:(WRITE)" + "Buffer I/O error on
+        # dev sda, lost async page write") surfaced only as scattered
+        # NEW_PATTERN alerts and the investigator closed it
+        # INSUFFICIENT_EVIDENCE — no seed linked kernel I/O errors to the
+        # failing device. Wording discipline (bug 11): must NOT contain
+        # healer KEYMAP trigger substrings ("transient desktop-session
+        # error", "gvfs/tracker", "recurring desktop-session chatter",
+        # "real service defect") or the healer would auto-run a desktop
+        # playbook on a hardware fault.
+        ("A storage device is failing at the hardware level (kernel I/O errors on one block device — data-loss risk, needs replacement or reconnection)",
+         "hardware", r"device offline error, dev (\w+)|Buffer I/O error on dev (\w+)|lost async page write|I/O error, dev (\w+)",
          r""),
     ],
     "RESTART_LOOP": [
@@ -402,6 +431,7 @@ def main():
         sev = alert.get("severity", "")
         rule = alert.get("rule", "")
         sig = f"{rule}:{alert.get('detail','')[:100]}"
+        # DISK_IO is HIGH severity (see anomaly_watch) and rule-tabled.
         if sev not in ("CRITICAL", "HIGH") and rule != "NEW_PATTERN":
             continue  # only rule-tabled alerts are auto-investigable
         if sig in done_sigs:

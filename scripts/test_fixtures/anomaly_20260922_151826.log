@@ -1,0 +1,148 @@
+ก.ย. 22 14:36:33 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Activating via systemd: service name='org.gnome.Terminal' unit='gnome-terminal-server.service' requested by ':1.304' (uid=1000 pid=237438 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 14:36:33 master-ai systemd[1334]: Starting gnome-terminal-server.service - GNOME Terminal Server...
+ก.ย. 22 14:36:33 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 14:36:33 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:36:33 | 200 |     807.938µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:36:33 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:36:33 | 200 |      455.29µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]: {
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "pc_online": true,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "adb_rtt": 1.5,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "battery": 97,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "temp_c": 29.1,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "mem_avail_mb": 2110,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "chain_ok": true,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "last_tick": 1790062314.7573664,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "phone_link": "MTP",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "adb_rtt_ms": "",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "ollama": "up",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "usb": "down",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "wifi": "down",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "learner": "up",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "u2": "down",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "disk_used": "62%",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "phone_base_heartbeat": "none",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "ella": "unknown",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "last_watchdog": 1790062593.7824008,
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "shizuku": "down",
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]:   "link_err": "phone-away"
+ก.ย. 22 14:36:33 master-ai watchdog.sh[239585]: }
+ก.ย. 22 14:36:33 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 14:36:33 master-ai dbus-daemon[1467]: [session uid=1000 pid=1467] Successfully activated service 'org.gnome.Terminal'
+ก.ย. 22 14:36:33 master-ai systemd[1334]: Started gnome-terminal-server.service - GNOME Terminal Server.
+ก.ย. 22 14:36:33 master-ai systemd[1334]: Started vte-spawn-095e97cb-5f49-4a7c-a9dc-420e0907d01c.scope - VTE child process 239594 launched by gnome-terminal-server process 239547.
+ก.ย. 22 14:36:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-dce80869.scope - /bin/sh -c "exit 0".
+ก.ย. 22 14:36:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-356fc0449c334ff79d134947121c5916.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/356fc0449c334ff79d134947121c5916.json --ack-file /home/aorus/.hermes/cron/external-workers/356fc0449c334ff79d134947121c5916.ready.
+ก.ย. 22 14:36:54 master-ai omnilearn_loop.sh[239853]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 14:36:58 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-356fc0449c334ff79d134947121c5916.scope: Consumed 1.886s CPU time.
+ก.ย. 22 14:39:47 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 14:39:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:39:47 | 200 |     501.031µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:39:47 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:39:47 | 200 |     499.505µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]: {
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "pc_online": true,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "adb_rtt": 1.5,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "battery": 97,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "temp_c": 29.1,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "mem_avail_mb": 2110,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "chain_ok": true,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "last_tick": 1790062614.820703,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "phone_link": "MTP",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "adb_rtt_ms": "",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "ollama": "up",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "usb": "down",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "wifi": "down",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "learner": "up",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "u2": "down",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "disk_used": "62%",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "phone_base_heartbeat": "none",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "ella": "unknown",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "last_watchdog": 1790062787.5653665,
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "shizuku": "down",
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]:   "link_err": "phone-away"
+ก.ย. 22 14:39:47 master-ai watchdog.sh[240300]: }
+ก.ย. 22 14:39:47 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).
+ก.ย. 22 14:39:53 master-ai kernel: usb 2-4.2: new SuperSpeed USB device number 5 using xhci_hcd
+ก.ย. 22 14:39:53 master-ai kernel: usb 2-4.2: New USB device found, idVendor=0781, idProduct=55ab, bcdDevice= 1.00
+ก.ย. 22 14:39:53 master-ai kernel: usb 2-4.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+ก.ย. 22 14:39:53 master-ai kernel: usb 2-4.2: Product:  SanDisk 3.2Gen1
+ก.ย. 22 14:39:53 master-ai kernel: usb 2-4.2: Manufacturer:  USB
+ก.ย. 22 14:39:53 master-ai kernel: usb 2-4.2: SerialNumber: 0101474aa88732a2dffeba9f5a341cad4555914f1513eb59c0ec1e8a0d31ef9bc5a300000000000000000000e0690f0500075400ab55810716ae9388
+ก.ย. 22 14:39:53 master-ai mtp-probe[240319]: checking bus 2, device 5: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2"
+ก.ย. 22 14:39:53 master-ai mtp-probe[240319]: bus: 2, device: 5 was not an MTP device
+ก.ย. 22 14:39:53 master-ai kernel: usb-storage 2-4.2:1.0: USB Mass Storage device detected
+ก.ย. 22 14:39:53 master-ai kernel: scsi host8: usb-storage 2-4.2:1.0
+ก.ย. 22 14:39:53 master-ai kernel: usbcore: registered new interface driver usb-storage
+ก.ย. 22 14:39:53 master-ai kernel: usbcore: registered new interface driver uas
+ก.ย. 22 14:39:53 master-ai mtp-probe[240337]: checking bus 2, device 5: "/sys/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2"
+ก.ย. 22 14:39:53 master-ai mtp-probe[240337]: bus: 2, device: 5 was not an MTP device
+ก.ย. 22 14:39:54 master-ai kernel: scsi 8:0:0:0: Direct-Access      USB      SanDisk 3.2Gen1 1.00 PQ: 0 ANSI: 6
+ก.ย. 22 14:39:54 master-ai kernel: sd 8:0:0:0: Attached scsi generic sg0 type 0
+ก.ย. 22 14:39:54 master-ai kernel: sd 8:0:0:0: [sda] 488570880 512-byte logical blocks: (250 GB/233 GiB)
+ก.ย. 22 14:39:54 master-ai kernel: sd 8:0:0:0: [sda] Write Protect is off
+ก.ย. 22 14:39:54 master-ai kernel: sd 8:0:0:0: [sda] Mode Sense: 43 00 00 00
+ก.ย. 22 14:39:54 master-ai kernel: sd 8:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+ก.ย. 22 14:39:54 master-ai kernel:  sda: sda1 sda2
+ก.ย. 22 14:39:54 master-ai kernel: sd 8:0:0:0: [sda] Attached SCSI removable disk
+ก.ย. 22 14:39:54 master-ai udisksd[982]: Mounted /dev/sda1 at /media/aorus/BOOTFORGE on behalf of uid 1000
+ก.ย. 22 14:40:00 master-ai dbus-daemon[943]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.5592' (uid=1000 pid=237438 comm="/usr/bin/nautilus --gapplication-service" label="nautilus (unconfined)")
+ก.ย. 22 14:40:00 master-ai systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+ก.ย. 22 14:40:00 master-ai systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+ก.ย. 22 14:40:00 master-ai systemd[1]: sysstat-collect.service: Deactivated successfully.
+ก.ย. 22 14:40:00 master-ai systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+ก.ย. 22 14:40:00 master-ai gnome-shell[1822]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0xa00c4c
+ก.ย. 22 14:40:00 master-ai dbus-daemon[943]: [system] Successfully activated service 'org.freedesktop.hostname1'
+ก.ย. 22 14:40:00 master-ai systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+ก.ย. 22 14:40:01 master-ai CRON[240391]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 14:40:01 master-ai CRON[240392]: pam_unix(cron:session): session opened for user aorus(uid=1000) by aorus(uid=0)
+ก.ย. 22 14:40:01 master-ai CRON[240393]: (aorus) CMD (cd ~/.hermes/skills/productivity/atsm-skill-optimizer && python3 scripts/hsaes_check.py check >> data/self_check.log 2>&1 && echo '[\340\270\210. 21 \340\270\201.\340\270\242. 2569 21:14:53 +07] Self-check OK' >> data/self_check.log)
+ก.ย. 22 14:40:01 master-ai CRON[240394]: (aorus) CMD (/home/aorus/.hermes/skills/productivity/atsm-skill-optimizer/atsm_autostart.sh)
+ก.ย. 22 14:40:01 master-ai CRON[240392]: (CRON) info (No MTA installed, discarding output)
+ก.ย. 22 14:40:01 master-ai CRON[240392]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 14:40:02 master-ai crontab[240426]: (aorus) LIST (aorus)
+ก.ย. 22 14:40:02 master-ai CRON[240391]: pam_unix(cron:session): session closed for user aorus
+ก.ย. 22 14:40:02 master-ai gnome-shell[1822]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0xa00c5d
+ก.ย. 22 14:40:13 master-ai kernel: usb 2-4.2: USB disconnect, device number 5
+ก.ย. 22 14:40:13 master-ai udisksd[982]: Cleaning up mount point /media/aorus/BOOTFORGE (device 8:1 no longer exists)
+ก.ย. 22 14:40:13 master-ai systemd[1]: media-aorus-BOOTFORGE.mount: Deactivated successfully.
+ก.ย. 22 14:40:13 master-ai gnome-shell[1822]: Failed to query filesystem: method Gio.File.query_filesystem_info_async: At least 4 arguments required, but only 3 passed
+ก.ย. 22 14:40:13 master-ai gnome-shell[1822]: Object .Gjs_drive-menu_gnome-shell-extensions_gcampax_github_com_extension_MountMenuItem (0x59a1c9cae8a0), has been already disposed — impossible to set any property on it. This might be caused by the object having been destroyed from C code using something such as destroy(), dispose(), or remove() vfuncs.
+                                                  == Stack trace for context 0x59a1c653a740 ==
+                                                  #0   7ffe842d6700 b   file:///usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js:86 (53796487e0 @ 70)
+                                                  #1   7ffe842d6790 b   self-hosted:852 (3876350ca7e0 @ 15)
+                                                  #2   59a1c66066a8 i   resource:///org/gnome/shell/ui/init.js:21 (2e1e42f70bf0 @ 48)
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:16 master-ai xdg-desktop-por[2352]: Failed to measure available space: Error getting filesystem info for /media/aorus/BOOTFORGE: No such file or directory
+ก.ย. 22 14:40:32 master-ai systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+ก.ย. 22 14:41:54 master-ai omnilearn_loop.sh[240602]: tick tgt=MTP rtt=ms err=phone-away
+ก.ย. 22 14:42:36 master-ai systemd[1334]: Started hermes-probe-scope-202440-329ecaac.scope - /bin/sh -c "exit 0".
+ก.ย. 22 14:42:36 master-ai systemd[1334]: Started hermes-worker-cron-d41579415a27-exec-5dc3fc265fe24078a8928c3c2e10bd2f.scope - /home/aorus/.hermes/hermes-agent/venv/bin/python -m cron.scheduler --external-worker-file /home/aorus/.hermes/cron/external-workers/5dc3fc265fe24078a8928c3c2e10bd2f.json --ack-file /home/aorus/.hermes/cron/external-workers/5dc3fc265fe24078a8928c3c2e10bd2f.ready.
+ก.ย. 22 14:43:03 master-ai systemd[1334]: hermes-worker-cron-d41579415a27-exec-5dc3fc265fe24078a8928c3c2e10bd2f.scope: Consumed 1.958s CPU time.
+ก.ย. 22 14:43:03 master-ai systemd[1334]: Starting omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence)...
+ก.ย. 22 14:43:03 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:43:03 | 200 |      577.55µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:43:03 master-ai ollama[1447]: [GIN] 2026/09/22 - 14:43:03 | 200 |     512.886µs |       127.0.0.1 | GET      "/api/tags"
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]: {
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "pc_online": true,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "adb_rtt": 1.5,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "battery": 97,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "temp_c": 29.1,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "mem_avail_mb": 2110,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "chain_ok": true,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "last_tick": 1790062914.896396,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "phone_link": "MTP",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "adb_rtt_ms": "",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "ollama": "up",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "usb": "down",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "wifi": "down",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "learner": "up",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "u2": "down",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "disk_used": "62%",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "phone_base_heartbeat": "none",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "ella": "unknown",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "last_watchdog": 1790062983.3978415,
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "shizuku": "down",
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]:   "link_err": "phone-away"
+ก.ย. 22 14:43:03 master-ai watchdog.sh[240820]: }
+ก.ย. 22 14:43:03 master-ai systemd[1334]: Finished omnilearn-watchdog.service - Omnilearn watchdog (all channels + presence).

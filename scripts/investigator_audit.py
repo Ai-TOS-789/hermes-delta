@@ -110,6 +110,8 @@ def classify_verdict(best):
         return "desktop_noise"
     if "desktop subsystem fault" in b:
         return "desktop_subsystem_fault"
+    if "storage device is failing" in b or "kernel i/o errors on one block device" in b:
+        return "disk_io_fault"
     if "real service defect" in b:
         return "real_service_defect"
     return None
@@ -177,6 +179,29 @@ def score(inv, now):
         score_v = "TRUE_POSITIVE" if recurred >= 2 else "FALSE_POSITIVE"
         why = (f"component error recurred {recurred}x in the "
                f"{SCORE_DELAY_MIN}min after the verdict")
+    elif cls == "disk_io_fault":
+        # hardware truth (production 2026-09-22: sda USB write-fail): a disk
+        # verdict is TRUE_POSITIVE if the SAME device keeps throwing I/O
+        # errors after the verdict (hardware faults don't self-heal), or if
+        # the device disappeared (user replugged/removed it — the diagnosis
+        # was right and the human acted). FALSE_POSITIVE only if the device
+        # is still present AND silent for the whole window.
+        dev = re.search(r"dev ([a-z]+)", detail)
+        dev = dev.group(1) if dev else ""
+        errs = [l for l in lines if dev and f"dev {dev}" in l.lower()
+                and re.search(r"offline|i/o error|buffer i/o", l, re.I)]
+        if errs:
+            score_v = "TRUE_POSITIVE"
+            why = (f"/dev/{dev} kept throwing I/O errors "
+                   f"({len(errs)} lines) after the verdict — hardware fault confirmed")
+        elif dev and os.path.exists(f"/dev/{dev}"):
+            score_v = "FALSE_POSITIVE"
+            why = (f"/dev/{dev} still present but silent for the whole "
+                   f"{SCORE_DELAY_MIN}min window — no hardware fault observed")
+        else:
+            score_v = "TRUE_POSITIVE"
+            why = (f"device {dev or '?'} no longer present — removed/replugged "
+                   f"after the diagnosis (human acted on the escalation)")
     else:
         return None
 

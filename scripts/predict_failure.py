@@ -72,9 +72,19 @@ def predict(rows):
             preds.append({"failure": name, "probability": p,
                           "eta_minutes": round(eta) if eta else None,
                           "current": val, "slope_per_hr": round(sl * 60 / interval, 2) if interval else 0})
+    # Error-burst crash risk — CALIBRATED (module 20 audit, 2026-09-22):
+    # the old rule (err_now >= 10 OR err_ratio >= 2.5) fired 6/6 FALSE
+    # ALARMS at p up to 1.0 — this desktop's journalctl -p err baseline is
+    # 1-3 per 10 min with benign tracker/brave bursts to 11-14, so a ratio
+    # alone (5 vs 1) predicted "crash" from desktop chatter. A real storm
+    # needs BOTH an absolute floor (>= 20 err-level lines / 10 min, ~7x
+    # the worst observed benign burst) AND a doubling ratio. Applied by the
+    # operator per module 20's OVER_FIRING recommendation under the user's
+    # standing autonomous-improvement directive; module 20 keeps scoring
+    # future predictions — if this still over-fires, the audit catches it.
     err_ratio = (win[-1]["err_now"] + 1) / (win[-1]["err_prev"] + 1)
-    if win[-1]["err_now"] >= 10 or err_ratio >= 2.5:
-        preds.append({"failure": "Error-burst crash risk", "probability": round(min(1.0, 0.3 + 0.2 * err_ratio), 2),
+    if win[-1]["err_now"] >= 20 and err_ratio >= 2.0:
+        preds.append({"failure": "Error-burst crash risk", "probability": round(min(1.0, 0.3 + 0.15 * err_ratio), 2),
                       "eta_minutes": 15, "current": win[-1]["err_now"], "slope_per_hr": None})
     return preds
 

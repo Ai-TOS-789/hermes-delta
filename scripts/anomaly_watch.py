@@ -6,8 +6,17 @@ restricted on this host but the journal carries them).
 
 Rules (from proactive-monitoring skill):
   CRITICAL  OOM kill, kernel panic/oops, soft/hard lockup, watchdog timeout
-  HIGH      error rate > 10/min, service restart loop (>=2 Scheduled restart)
+  HIGH      error rate > 10/min, service restart loop (>=2 Scheduled restart),
+            kernel disk I/O failure (device offline / Buffer I/O error)
   MEDIUM    new error pattern (never seen in baseline), memory > 90%
+
+Disk I/O (production 2026-09-22): kernel "device offline error, dev sda" /
+"Buffer I/O error ... lost async page write" fired as scattered NEW_PATTERN
+alerts while the real story was one failing USB drive. One HIGH alert per
+DEVICE per window (not per line — alert fatigue), and the lines are excluded
+from signature counting so a failing disk keeps alerting until fixed (same
+re-alert semantics as CRITICAL; a disk that fails 3 runs straight is not
+"known noise").
 
 Alert-fatigue control (skill pitfall #1): pattern signatures are normalized
 (digits/UUIDs/IPs/hex -> placeholders) and counted across runs; a pattern seen
@@ -34,6 +43,13 @@ CRIT_PATTERNS = [
     re.compile(r"soft lockup|hard LOCKUP|watchdog: BUG", re.I),
 ]
 RESTART_RE = re.compile(r"Scheduled restart job.*unit ([^,]+)", re.I)
+# kernel disk I/O failure signatures (production 2026-09-22: sda USB drive
+# write-fail — "device offline error, dev sda, sector 0 op 0x1:(WRITE)" and
+# "Buffer I/O error on dev sda, lost async page write"). These are HARDWARE
+# failure lines, not desktop chatter: they get a DISK_IO HIGH alert (one per
+# device per window) and are EXCLUDED from signature counting so a failing
+# disk never graduates to "known noise".
+DISK_IO_RE = re.compile(r"device offline error, dev (\w+)|Buffer I/O error on dev (\w+)", re.I)
 
 def norm(msg):
     """Normalize a log message into a stable pattern signature."""
@@ -149,11 +165,22 @@ def main():
 
     alerts, evidence = [], []
     err_lines, seen_sigs, restarts = [], {}, {}
+    disk_io = {}   # dev -> first line no (one DISK_IO alert per device)
     for i, line in enumerate(lines, 1):
         unit, msg = parse_unit(line)
         # bug 12: never count/alert on the pipeline's own sandbox test units
         if is_selftest(unit, msg):
             continue
+        dm = DISK_IO_RE.search(msg)
+        if dm:
+            dev = (dm.group(1) or dm.group(2)).lower()
+            if dev not in disk_io:
+                disk_io[dev] = i
+                alerts.append({"rule": "DISK_IO", "severity": "HIGH",
+                               "detail": f"kernel disk I/O failure on /dev/{dev}: {msg[:90]}",
+                               "cite": f"[anomaly:{artname}:{i}]"})
+            evidence.append(f"[anomaly:{artname}:{i}] DISK_IO /dev/{dev}: {msg[:110]}")
+            continue   # hardware failure line — never enters signature noise
         if any(p.search(msg) for p in CRIT_PATTERNS):
             alerts.append({"rule": "CRITICAL_PATTERN", "severity": "CRITICAL",
                            "detail": msg[:120],

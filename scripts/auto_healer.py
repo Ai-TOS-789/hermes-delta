@@ -61,6 +61,17 @@ PLAYBOOK = {
         "pre": "true", "apply": "true",
         "verify": "true", "rollback": "true",
     },
+    "disk io failure": {
+        # hardware fault (production 2026-09-22: sda USB write-fail) — there
+        # is NO safe automated remedy for a dying disk. Entry exists so the
+        # escalation is categorized ("replace/reconnect the device") instead
+        # of the generic "no playbook entry". safety=UNSAFE + the gate below
+        # guarantee it can never auto-execute.
+        "id": "ESCALATE_DISK_FAILURE", "safety": "UNSAFE",
+        "desc": "storage device failing at hardware level — human must back up data and replace/reconnect the device",
+        "pre": "true", "apply": "true",
+        "verify": "true", "rollback": "true",
+    },
 }
 
 # keywords in the investigation's root-cause statement -> playbook entry
@@ -72,6 +83,11 @@ KEYMAP = [
     (re.compile(r"stale copy|changed on disk|needs reload|daemon-reload", re.I), "stale unit config"),
     (re.compile(r"failed (user )?unit|unit .{0,20}failed|reset-failed|real service defect", re.I), "failed user unit"),
     (re.compile(r"(transient desktop-session error|recurring desktop-session chatter|desktop noise|gvfs/tracker)", re.I), "transient desktop"),
+    # hardware (production 2026-09-22 sda write-fail): no SAFE action exists
+    # for a failing disk — unmounting/replugging is a human decision. Maps to
+    # an UNSAFE playbook entry so the run is RECORDED and escalated, never
+    # auto-executed (see the safety gate below).
+    (re.compile(r"storage device is failing|kernel I/O errors on one block device|data-loss risk", re.I), "disk io failure"),
 ]
 
 def sh(cmd, timeout=30):
@@ -131,6 +147,17 @@ def main():
         if not pb:
             escalated.append({"rule": rule, "signature": sig, "reason": "no playbook entry for root cause",
                               "root_cause": best[:160], "ts": now()})
+            continue
+        # SAFETY GATE (bug 13, 2026-09-22): the docstring has claimed "only
+        # SAFE actions run" since module 16 shipped, but main() never checked
+        # pb["safety"] — every playbook entry was auto-executed. Latent, not
+        # live (all 3 entries were SAFE), but the first UNSAFE entry (e.g.
+        # the disk-failure escalation) would have run unguarded. A safety
+        # property stated in documentation must be enforced in code.
+        if pb.get("safety") != "SAFE":
+            escalated.append({"rule": rule, "signature": sig,
+                              "reason": f"playbook action {pb['id']} is {pb.get('safety')} — human approval required: {pb['desc'][:100]}",
+                              "action": pb["id"], "root_cause": best[:160], "ts": now()})
             continue
 
         # blast-radius control: unit must come from the investigation's evidence
