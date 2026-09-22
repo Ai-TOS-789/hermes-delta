@@ -55,17 +55,25 @@ def build():
         # index — a retracted root cause must not be re-proposed
         if e.get("outcome") == "retracted" or str(e.get("root_cause", "")).startswith("[RETRACTED"):
             continue
+        # module 18 demotion: citation-rotted beliefs (report pruned, no
+        # inline evidence, no healer record — permanently unverifiable)
+        # stay searchable but are annotated UNVERIFIED so investigations
+        # weigh them as hints, not confirmed knowledge (AGM: unverifiable
+        # belief loses standing, it is not deleted)
+        rotted = e.get("citation_status") == "citation_rotted"
         # schema A: patterns_found/skill/task_type (self-learning entries)
         toks = tokens(" ".join(e.get("patterns_found", [])) + " " + e.get("skill", "") + " " + e.get("task_type", "") + " " + " ".join(e.get("corrections", [])))
         for p in e.get("patterns_found", []):
             for t in tokens(p + " " + e.get("skill", "")):
-                index[t].append((p, cite, e.get("outcome", "?")))
+                index[t].append((p, cite,
+                                 "unverified(citation-rotted)" if rotted else e.get("outcome", "?")))
         # schema B: type=root_cause entries (symptoms + root_cause + fix)
         if e.get("type") == "root_cause" or "symptoms" in e:
             symptoms = e.get("symptoms", [])
             rc = e.get("root_cause", "")
             for t in tokens(" ".join(symptoms) + " " + rc):
-                index[t].append((rc[:80], cite, e.get("fix", "?")))
+                index[t].append((rc[:80], cite,
+                                 "unverified(citation-rotted)" if rotted else e.get("fix", "?")))
     for ln, h in load_jsonl(HIST):
         cite = f"delta_report_history.jsonl:{ln}"
         if h.get("predict", {}).get("anomaly"):

@@ -154,9 +154,14 @@ def hypotheses_for(alert, cap):
                       "confirm_re": cpat, "disconfirm_re": dpat,
                       "source": "rule-table", "gate": mode,
                       "alert_detail": alert.get("detail", "")})
-    # recall: past root causes matching the alert's symptom words
+    # recall: past root causes matching the alert's symptom words.
+    # Unverified (citation-rotted) recalls are demoted below verified ones —
+    # they are hints, not confirmed knowledge.
     words = f"{rule} {alert.get('detail','')}"
-    for r in recall(words)[:2]:
+    recalled = recall(words)
+    verified = [r for r in recalled
+                if not any("unverified" in o for o in r.get("seen_outcomes", []))]
+    for r in (verified + [r for r in recalled if r not in verified])[:2]:
         # strip any inherited prefix — stored statements already carry
         # "Recalled:"/"**" from past generations and re-prefixing compounds
         # ("Recalled: **Recalled: **..." observed in production 2026-09-22)
@@ -205,7 +210,13 @@ def test(h, lines, cap):
                 conf.append(f"[{art}:{i}] {ln.strip()[:110]}")
                 if len(conf) >= 3:
                     break
-    if dre:
+    # window-wide disconfirm scan ONLY for ungated hypotheses. Gated ones
+    # (alert_line_only / non_desktop_defect) settle both directions on the
+    # alert line itself — a window-wide scan here would disconfirm EVERY
+    # non-desktop hypothesis on a desktop machine (gnome-shell lines exist
+    # in every window; production 2026-09-22: gsd-media-keys alert wrongly
+    # REJECTED as "not a real defect" by unrelated desktop noise).
+    if dre and not gate:
         for i, ln in enumerate(lines, 1):
             if re.search(dre, ln):
                 disconf.append(f"[{art}:{i}] {ln.strip()[:110]}")
